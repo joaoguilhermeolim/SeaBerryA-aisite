@@ -1,0 +1,14 @@
+# =============================================================
+#  Netlify configuration — seaberryacai.com
+# =============================================================
+
+# -------------------------------------------------------------
+#  Language-based automatic routing
+#  English browsers → /en/   |   all others → / (PT, default)
+# -------------------------------------------------------------
+[[redirects]]
+  from       = "/*"
+  to         = "/en/:splat"
+  status     = 302
+  force      = false
+  conditions = { Language = ["en"] }
