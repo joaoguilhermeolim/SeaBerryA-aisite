@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- =========================
+     HEAD
+     ========================= -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title & SEO meta -->
+  <title>Açaí Madeira | SeaBerry Açaí - Machico Beach, Madeira</title>
+  <meta name="description"
+    content="The best fresh açaí in Madeira. Creamy bowls, quality ingredients and ocean views. Open every day in the heart of Machico, Madeira.">
+  <meta name="keywords"
+    content="açaí madeira, madeira açai bowl, acai madeira beach, açaí machico, best açaí madeira, acai bowl funchal, fresh acai madeira">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/images/LogoAcaiPreto.png">
+
+  <!-- Open Graph (WhatsApp / Instagram sharing) -->
+  <meta property="og:title" content="Açaí Madeira | SeaBerry Açaí">
+  <meta property="og:description" content="The best açaí in Madeira">
+  <meta property="og:image" content="https://seaberryacai.com/assets/images/VolleyHero1.jpeg">
+  <meta property="og:url" content="https://seaberryacai.com/en/">
+
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://seaberryacai.com/en/">
+  <link rel="alternate" hreflang="pt-PT" href="https://seaberryacai.com/">
+  <link rel="alternate" hreflang="en" href="https://seaberryacai.com/en/">
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SeaBerry Açaí",
+    "description": "Best fresh açaí in Machico, Madeira",
+    "image": "https://seaberryacai.com/assets/images/VolleyHero1.jpeg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Praia de Areia",
+      "addressLocality": "Machico",
+      "addressRegion": "Funchal, Madeira",
+      "postalCode": "9200-085",
+      "addressCountry": "PT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 32.718836,
+      "longitude": -16.762085
+    },
+    "url": "https://seaberryacai.com/en/",
+    "telephone": "",
+    "openingHours": "Mo-Su 12:00-19:30",
+    "priceRange": "5€ - 10€"
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Sora (headings) + Inter (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- AOS — Animate On Scroll (loaded once here) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Site custom styles -->
+  <link rel="stylesheet" href="../assets/style/style.css">
+</head>
+
+<!-- =========================
+     BODY
+     ========================= -->
+
+<body>
+
+  <!-- =========================
+       SVG SYMBOL DEFINITIONS
+       Reusable icons referenced via <use href="#icon-*">
+       Hidden from layout — display:none on the container.
+       ========================= -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+
+    <!-- Star icon (used in review ratings and footer) -->
+    <symbol id="icon-star" viewBox="0 0 20 20">
+      <path
+        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+    </symbol>
+
+    <!-- Location pin icon (used in hero badge, location section, footer) -->
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+      <circle cx="12" cy="9" r="2.5" />
+    </symbol>
+
+    <!-- Clock icon (used in location section and footer) -->
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </symbol>
+
+    <!-- Arrow right icon (used in CTA buttons) -->
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14M12 5l7 7-7 7" />
+    </symbol>
+
+    <!-- Arrow diagonal icon (used in secondary CTA buttons) -->
+    <symbol id="icon-arrow-diagonal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17L17 7M17 7H7M17 7v10" />
+    </symbol>
+
+    <!-- Checkmark icon (used in feature pills) -->
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12" />
+    </symbol>
+
+    <!-- Leaf icon (used in "Feito na hora" badge) -->
+    <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="#497536" stroke-width="2.2"
+        d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 6.2a8.5 8.5 0 0 1-8.5 10.05L11 20z" />
+      <path stroke="#497536" stroke-width="2.2" d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+    </symbol>
+
+    <!-- Instagram icon -->
+    <symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+      stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+    </symbol>
+
+    <!-- TikTok icon -->
+    <symbol id="icon-tiktok" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+    </symbol>
+
+    <!-- Facebook icon -->
+    <symbol id="icon-facebook" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+    </symbol>
+
+  </svg>
+  <!-- /SVG SYMBOL DEFINITIONS -->
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+  <header
+    class="absolute top-0 left-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 flex items-center justify-between pointer-events-none">
+    <div data-aos="fade-down" data-aos-duration="800" class="pointer-events-auto">
+      <a href="#" aria-label="SeaBerry Açaí logo"
+        class="inline-block group outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded-lg">
+        <img src="../assets/images/LogoAcaiTrans.png" alt="SeaBerry Açaí logo"
+          class="h-16 md:h-18 w-auto object-contain brightness-0 invert drop-shadow-md opacity-90 transition-all duration-300 group-hover:scale-[1.03] group-hover:opacity-100" />
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================
+       HERO SECTION
+       ========================= -->
+  <section id="hero" class="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden">
+
+    <!-- Central content block -->
+    <div class="relative z-10 flex flex-col items-center text-center
+      px-6 w-full max-w-3xl mx-auto mt-[-40px]">
+
+      <!-- Location badge -->
+      <div class="inline-flex items-center gap-2
+          bg-white/10 backdrop-blur-sm
+          border border-white/20
+          text-white/70 text-[11px] font-inter font-medium
+          tracking-[0.14em] uppercase
+          px-4 py-2 rounded-full mb-7" data-aos="fade-down" data-aos-duration="700">
+        <svg width="12" height="12" aria-hidden="true">
+          <use href="#icon-pin" />
+        </svg>
+        Machico · Madeira · Since 2024
+      </div>
+
+      <!-- H1 — primary headline -->
+      <h1 class="font-sora font-bold leading-[1.05] tracking-[-0.03em]
+          text-[44px] sm:text-[56px] lg:text-[68px]
+          text-white drop-shadow-sm
+          mb-5" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
+        Make this<br />
+        summer <span class="text-[#6aaa52]">yours</span>
+      </h1>
+
+      <!-- Supporting tagline -->
+      <p class="font-inter font-normal text-[15px] sm:text-base
+          text-white/75 leading-[1.7]
+          max-w-[380px] mb-10" data-aos="fade-up" data-aos-duration="800" data-aos-delay="220">
+        The true taste of summer, in every bite.
+      </p>
+
+      <!-- Primary CTA — "Visita-nos" -->
+      <a href="#localizacao" class="inline-flex items-center gap-2.5
+          font-inter font-semibold text-[17px] tracking-[0.02em]
+          text-white bg-[#497536]
+          px-11 py-[18px] rounded-full
+          transition-all duration-200 ease-out
+          hover:bg-[#6aaa52]
+          hover:-translate-y-[3px]
+          hover:shadow-[0_12px_32px_rgba(73,117,54,0.45)]
+          active:scale-[0.98] active:translate-y-0" data-aos="fade-up" data-aos-duration="800" data-aos-delay="350">
+        Visit Us
+        <svg width="18" height="18" aria-hidden="true">
+          <use href="#icon-arrow-right" />
+        </svg>
+      </a>
+
+    </div>
+
+    <!-- Hero background image -->
+    <div class="absolute inset-0 z-0">
+      <img src="../assets/images/VolleyHero1.jpeg" alt="Fresh açaí bowl with views over Machico Beach, Madeira"
+        class="w-full h-full object-cover object-center" fetchpriority="high" loading="eager" />
+      <!-- Gradient overlay: darkens top (navbar) and bottom (content) -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/5 to-black/40"></div>
+    </div>
+
+    <!-- Scroll indicator (bounce animation) -->
+    <!-- Note: infinite bounce is intentional on this element only -->
+    <div class="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-10
+        flex-col items-center gap-2.5" data-aos="fade-up" data-aos-delay="700" data-aos-duration="600">
+      <span class="font-inter font-medium text-[10px] tracking-[0.18em]
+          uppercase text-white/40">
+        Discover
+      </span>
+
+      <!-- Mouse icon with animated dot -->
+      <div class="w-[22px] h-[34px]
+          border-2 border-white/25 rounded-full
+          flex justify-center pt-[6px]">
+        <div class="w-[4px] h-[6px] bg-white/45 rounded-full animate-bounce" style="animation-duration: 1.6s;"></div>
+      </div>
+    </div>
+
+  </section>
+  <!-- /HERO SECTION -->
+
+
+  <!-- =========================
+       ABOUT SECTION (#sobre)
+       ========================= -->
+  <section id="sobre" class="bg-white py-24 px-6 md:px-12">
+    <div class="max-w-[1200px] mx-auto">
+
+      <!-- 2-column grid: text left / image right (reversed on mobile) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- LEFT COLUMN — Text content -->
+        <div class="flex flex-col justify-center order-2 md:order-1" data-aos="fade-right" data-aos-duration="900"
+          data-aos-delay="100">
+
+          <!-- Section label -->
+          <div class="inline-flex items-center gap-2 mb-5 self-start">
+            <div class="w-7 h-[2px] bg-[#497536] rounded-full"></div>
+            <span class="font-inter font-medium text-[11px] tracking-[0.16em]
+                uppercase text-[#497536]">
+              Machico · Madeira · Since 2024
+            </span>
+          </div>
+
+          <!-- Section sub-label -->
+          <p class="font-inter font-semibold text-[11px] tracking-[0.14em]
+              uppercase text-[#8A8680] mb-4">
+            Our Mission
+          </p>
+
+          <!-- Body copy — paragraph 1 -->
+          <p class="font-inter font-normal text-base leading-[1.75]
+              text-[#3D3A36] mb-5">
+            Inspired by the love for the sea, summer, and a healthy lifestyle,
+            SeaBerry Açaí was born with one goal: to make your summer
+            unforgettable, delivering the true taste of summer in every
+            single bite.
+          </p>
+
+          <!-- Body copy — paragraph 2 -->
+          <p class="font-inter font-normal text-base leading-[1.75]
+              text-[#3D3A36] mb-10">
+            At SeaBerry Açaí, we don't just serve the best açaí. With
+            excellence in every detail and contagious energy, we bring the
+            magic of summer to every visit.
+          </p>
+
+          <!-- Divider + decorative stats -->
+          <div class="border-t border-[#F0EEE9] pt-8
+              grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <!-- Removed "100% natural e fresco" for compliance -->
+            <div>
+              <p class="font-sora font-bold text-[28px] tracking-[-0.02em]
+                text-[#3E2C56] leading-none mb-1">★ 4.9</p>
+              <p class="font-inter text-[13px] text-[#8A8680] leading-snug">
+                Average rating
+              </p>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <p class="font-sora font-bold text-[28px] tracking-[-0.02em]
+                text-[#3E2C56] leading-none mb-1">Every day</p>
+              <p class="font-inter text-[13px] text-[#8A8680] leading-snug">
+                12:00 — 19:30
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <!-- /LEFT COLUMN -->
+
+        <!-- RIGHT COLUMN — Image -->
+        <div class="relative order-1 md:order-2" data-aos="fade-left" data-aos-duration="900" data-aos-delay="250">
+
+          <!-- Decorative offset block (background) -->
+          <div class="absolute -top-4 -right-4 lg:-top-6 lg:-right-6
+              w-full h-full
+              bg-[#F0EEE9] rounded-[20px]
+              z-0"></div>
+
+          <!-- Image container with hover zoom -->
+          <div class="relative z-10 rounded-[20px] overflow-hidden
+              aspect-[4/5] w-full
+              shadow-[0_4px_32px_rgba(62,44,86,0.10)]">
+            <img src="../assets/images/AcaiMelhor.jpeg"
+              alt="Fresh SeaBerry açaí bowl — best açaí in Madeira, made to order" class="w-full h-full object-cover object-center
+                transition-transform duration-500
+                hover:scale-[1.04]" loading="lazy" />
+
+          </div>
+
+        </div>
+      </div>
+      <!-- /RIGHT COLUMN -->
+
+    </div>
+    </div>
+  </section>
+  <!-- /ABOUT SECTION -->
+
+
+  <!-- =========================
+       LIFESTYLE SECTION (#lifestyle)
+       ========================= -->
+  <section id="lifestyle" class="bg-[#F8F7F5] py-24 px-6 md:px-12 overflow-hidden">
+    <div class="max-w-[1200px] mx-auto">
+
+      <!-- Section label -->
+      <div class="flex items-center gap-3 mb-14" data-aos="fade-up" data-aos-duration="700">
+        <div class="w-7 h-[2px] bg-[#497536] rounded-full"></div>
+        <span class="font-inter font-medium text-[11px] tracking-[0.16em]
+            uppercase text-[#497536]">
+          The Experience
+        </span>
+      </div>
+
+      <!-- 2-column grid: photo mosaic left / copy right -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-start">
+
+        <!-- LEFT COLUMN — Asymmetric photo mosaic -->
+        <div class="grid grid-cols-2 gap-3 md:gap-4">
+
+          <!-- Full-width dominant photo (top) —  beach sport vibe -->
+          <div class="col-span-2 rounded-[16px] overflow-hidden aspect-[16/7]" data-aos="fade-up"
+            data-aos-duration="900" data-aos-delay="150">
+            <img src="../assets/images/VolleyAreia.jpeg"
+              alt="Beach volleyball on the fine sands of Machico — SeaBerry healthy lifestyle" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+
+          <!-- Large portrait photo (bottom-left) -->
+          <div class="col-span-1 row-span-1 rounded-[16px] overflow-hidden aspect-[3/4]" data-aos="fade-up"
+            data-aos-duration="800" data-aos-delay="100">
+            <img src="../assets/images/PessoasCosta.jpeg" alt="Customers enjoying fresh açaí on Machico beach, Madeira"
+              class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+
+          <!-- Right column — two stacked photos -->
+          <div class="col-span-1 flex flex-col gap-3 md:gap-4">
+
+            <!-- Top-right photo — product (AcaiTop3: granola a cair) -->
+            <div class="rounded-[16px] overflow-hidden aspect-square" data-aos="fade-up" data-aos-duration="800"
+              data-aos-delay="200">
+              <img src="../assets/images/AcaiTop3.jpeg"
+                alt="Granola pouring over a SeaBerry açaí bowl — best açaí in Madeira" class="w-full h-full object-cover object-center
+                  transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+            </div>
+
+            <!-- Bottom-right photo -->
+            <div class="rounded-[16px] overflow-hidden flex-1 min-h-[140px]" data-aos="fade-up" data-aos-duration="800"
+              data-aos-delay="300">
+              <img src="../assets/images/BrandBike.jpeg" alt="SeaBerry Açaí brand bike in the Machico summer" class="w-full h-full object-cover object-center
+                  transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+            </div>
+
+          </div>
+
+        </div>
+        <!-- /LEFT COLUMN -->
+
+        <!-- RIGHT COLUMN — copy + health benefits -->
+        <div class="flex flex-col justify-center lg:pt-4">
+
+          <!-- Section label phrase -->
+          <p class="font-sora font-semibold text-[15px] tracking-[0.08em]
+              uppercase text-[#497536] mb-4" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+            Sun. Energy. Açaí. Repeat.
+          </p>
+
+          <!-- Section H2 -->
+          <h2 class="font-sora font-bold text-[36px] md:text-[40px]
+              tracking-[-0.025em] leading-[1.1]
+              text-[#3E2C56] mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="180">
+            Feel summer<br />in every bite
+          </h2>
+
+          <!-- Body copy -->
+          <p class="font-inter font-normal text-base leading-[1.75]
+              text-[#3D3A36] mb-8 max-w-[420px]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">
+            We believe a healthy lifestyle makes summer even better. At SeaBerry Açaí, we combine energy, balance, and
+            an unforgettable flavour.
+          </p>
+
+          <!-- Tagline highlight -->
+          <p class="font-sora font-semibold text-[17px] md:text-[19px]
+              tracking-[-0.01em] leading-[1.3]
+              text-[#3E2C56] mb-8" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            The true taste of your summer,<br />naturally healthy
+          </p>
+
+          <!-- Benefit pills -->
+          <div class="flex flex-wrap gap-2 mb-10" data-aos="fade-up" data-aos-duration="700" data-aos-delay="360">
+
+            <!-- Antioxidantes — verde -->
+            <span class="inline-flex items-center gap-1.5
+                bg-[#E8F4E3] text-[#497536]
+                font-inter font-medium text-[12px]
+                px-4 py-2 rounded-full">
+              <!-- Leaf icon: antioxidantes / natureza -->
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 6.2a8.5 8.5 0 0 1-8.5 10.05L11 20z" />
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+              </svg>
+              Rich in antioxidants
+            </span>
+
+            <!-- Ómega 6 e 9 — roxo -->
+            <span class="inline-flex items-center gap-1.5
+                bg-[#EAE3F2] text-[#3E2C56]
+                font-inter font-medium text-[12px]
+                px-4 py-2 rounded-full">
+              <!-- Drop / wave icon: gorduras / ómega -->
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+              </svg>
+              Rich in omega 6 &amp; 9
+            </span>
+
+            <!-- Vitaminas e sais minerais — verde -->
+            <span class="inline-flex items-center gap-1.5
+                bg-[#E8F4E3] text-[#497536]
+                font-inter font-medium text-[12px]
+                px-4 py-2 rounded-full">
+              <!-- Lightning bolt icon: energia / vitalidade -->
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+              Rich in vitamins &amp; minerals
+            </span>
+
+
+
+          </div>
+
+          <!-- Secondary CTA — "Ver Galeria" -->
+          <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="480">
+            <a href="#galeria" class="inline-flex items-center gap-2.5
+                font-inter font-semibold text-[15px] tracking-[0.02em]
+                text-[#497536]
+                border-2 border-[#497536]
+                px-8 py-[13px] rounded-full
+                transition-all duration-200 ease-out
+                hover:bg-[#F0F5EE]
+                hover:-translate-y-[2px]
+                hover:shadow-[0_6px_20px_rgba(73,117,54,0.15)]
+                active:scale-[0.98] active:translate-y-0">
+              View Gallery
+              <svg width="15" height="15" aria-hidden="true">
+                <use href="#icon-arrow-diagonal" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+        <!-- /RIGHT COLUMN -->
+
+      </div>
+    </div>
+  </section>
+  <!-- /LIFESTYLE SECTION -->
+
+
+  <!-- =========================
+       GALLERY SECTION (#galeria)
+       ========================= -->
+  <section id="galeria" class="bg-white py-24 overflow-hidden">
+
+    <!-- Gallery header -->
+    <div class="px-6 md:px-12 max-w-[1200px] mx-auto mb-12">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+
+        <!-- Title + label -->
+        <div>
+          <div class="flex items-center gap-3 mb-4" data-aos="fade-up" data-aos-duration="700">
+            <div class="w-7 h-[2px] bg-[#497536] rounded-full"></div>
+            <span class="font-inter font-medium text-[11px] tracking-[0.16em]
+                uppercase text-[#497536]">
+              Gallery
+            </span>
+          </div>
+
+          <h2 class="font-sora font-bold text-[36px] md:text-[40px]
+              tracking-[-0.025em] leading-[1.1] text-[#3E2C56]" data-aos="fade-up" data-aos-duration="800"
+            data-aos-delay="100">
+            Moments that<br />last forever
+          </h2>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="flex items-center gap-3 pb-1 shrink-0" data-aos="fade-up" data-aos-duration="700"
+          data-aos-delay="200">
+          <span class="font-inter font-medium text-[12px] tracking-[0.06em]
+              text-[#8A8680]">
+            Swipe to see more
+          </span>
+          <div class="flex items-center gap-1">
+            <div class="w-2 h-2 rounded-full bg-[#C8C4BC] animate-pulse"></div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A8680" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Horizontal scroll strip -->
+    <div class="flex gap-3 md:gap-4
+        overflow-x-auto scroll-smooth
+        snap-x snap-mandatory
+        scrollbar-hide
+        px-6 md:px-12
+        pb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+
+      <!-- Block 01 — Portrait -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[300px] aspect-[4/5]">
+        <img src="../assets/images/AcaiBanca.jpeg" alt="SeaBerry açaí stand at Machico beach" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 02 — Square -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[280px] aspect-square">
+        <img src="../assets/images/VolleyAreia.jpeg" alt="Beach volleyball on the fine sands of Machico" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 03 — Compound Block (Horizontal Top) -->
+      <div class="shrink-0 snap-start flex flex-col gap-3 md:gap-4
+        w-[320px] md:w-[380px]">
+        <div class="rounded-[16px] overflow-hidden flex-1">
+          <img src="../assets/images/PessoasPedras.jpeg" alt="People enjoying açaí on the rocks at Machico beach" class="w-full h-full object-cover object-center
+              transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+        </div>
+        <div class="flex gap-3 md:gap-4 flex-1">
+          <div class="rounded-[16px] overflow-hidden flex-1">
+            <img src="../assets/images/AcaiTop1.jpeg" alt="Top-down view of an açaí bowl with fresh toppings" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+          <div class="rounded-[16px] overflow-hidden flex-1">
+            <img src="../assets/images/AcaiFruta.jpeg" alt="Açaí bowl with fresh tropical fruit" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 04 — Portrait -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[300px] aspect-[4/5]">
+        <img src="../assets/images/AcaiFinal.jpeg" alt="Fresh SeaBerry açaí bowl ready to serve" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 05 — Double Vertical -->
+      <div class="shrink-0 snap-start flex flex-col gap-3 md:gap-4
+        w-[200px] md:w-[240px]">
+        <div class="rounded-[16px] overflow-hidden flex-1">
+          <img src="../assets/images/AcaiPrep.jpeg" alt="Artisan preparation of SeaBerry açaí" class="w-full h-full object-cover object-center
+              transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+        </div>
+        <div class="rounded-[16px] overflow-hidden flex-1">
+          <img src="../assets/images/Olim2.jpeg"
+            alt="Localização do SeaBerry Açaí no Olímpo de Machico — açai madeira shopping" class="w-full h-full object-cover object-center
+              transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Block 06 — Square -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[280px] aspect-square">
+        <img src="../assets/images/BrandBike2.jpeg" alt="SeaBerry brand bike in the Machico summer" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 07 — Compound Block (Horizontal Bottom) -->
+      <div class="shrink-0 snap-start flex flex-col gap-3 md:gap-4
+        w-[320px] md:w-[380px]">
+        <div class="flex gap-3 md:gap-4 flex-1">
+          <div class="rounded-[16px] overflow-hidden flex-1">
+            <img src="../assets/images/AcaiDuoMesa1.jpeg" alt="Two colourful açaí bowls on the table" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+          <div class="rounded-[16px] overflow-hidden flex-1">
+            <img src="../assets/images/AcaiTop2.jpeg" alt="SeaBerry açaí with fresh tropical fruit" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+        </div>
+        <div class="rounded-[16px] overflow-hidden flex-1">
+          <img src="../assets/images/PessoasParede.jpeg"
+            alt="Young people enjoying fresh acai by the wall à parede em Machico — açai madeira shopping" class="w-full h-full object-cover object-center
+              transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Block 08 — Portrait -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[300px] aspect-[4/5]">
+        <img src="../assets/images/Olim1.jpeg" alt="SeaBerry Açaí at the Olímpo complex in Machico" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 09 — Square -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[280px] aspect-square">
+        <img src="../assets/images/Praia1.jpeg"
+          alt="Praia de Machico com ondas e areia — cenário ideal para açaí SeaBerry" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 10 — Compound Block (Horizontal Top) -->
+      <div class="shrink-0 snap-start flex flex-col gap-3 md:gap-4
+        w-[320px] md:w-[380px]">
+        <div class="rounded-[16px] overflow-hidden flex-1">
+          <img src="../assets/images/AcaiDuo.jpeg" alt="Two SeaBerry açaí bowls ready at Machico beach" class="w-full h-full object-cover object-center
+              transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+        </div>
+        <div class="flex gap-3 md:gap-4 flex-1">
+          <div class="rounded-[16px] overflow-hidden flex-1">
+            <img src="../assets/images/AcaiMesa.jpeg" alt="SeaBerry açaí bowl on the table with a summer view" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+          <div class="rounded-[16px] overflow-hidden flex-1">
+            <img src="../assets/images/AcaiTops.jpeg" alt="Variety of fresh toppings for SeaBerry açaí" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 11 — Portrait -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[300px] aspect-[4/5]">
+        <img src="../assets/images/AtendDuo1.jpeg" alt="SeaBerry team serving açaí with energy in Machico" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 12 — Double Vertical -->
+      <div class="shrink-0 snap-start flex flex-col gap-3 md:gap-4
+        w-[200px] md:w-[240px]">
+        <div class="rounded-[16px] overflow-hidden flex-1">
+          <img src="../assets/images/AtendDuo2.jpeg" alt="Two SeaBerry team members serving açaí at the beach" class="w-full h-full object-cover object-center
+              transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+        </div>
+        <div class="rounded-[16px] overflow-hidden flex-1">
+          <img src="../assets/images/AcaiPraia.jpeg" alt="SeaBerry açaí at Machico beach — summer in every bite" class="w-full h-full object-cover object-center
+              transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Block 13 — Square -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[280px] aspect-square">
+        <img src="../assets/images/BrandOlim.jpeg"
+          alt="Identidade visual da marca SeaBerry Açaí no verão — madeira acai bowl" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 14 — Compound Block (Horizontal Bottom) -->
+      <div class="shrink-0 snap-start flex flex-col gap-3 md:gap-4
+        w-[320px] md:w-[380px]">
+        <div class="flex gap-3 md:gap-4 flex-1">
+          <div class="rounded-[16px] overflow-hidden flex-1">
+            <img src="../assets/images/AcaiDuoMesa2.jpeg" alt="Premium SeaBerry açaí presentation on the table" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+          <div class="rounded-[16px] overflow-hidden flex-1">
+            <img src="../assets/images/AcaiTop3.jpeg" alt="Açaí preparation with premium SeaBerry toppings" class="w-full h-full object-cover object-center
+                transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+          </div>
+        </div>
+        <div class="rounded-[16px] overflow-hidden flex-1">
+          <img src="../assets/images/PessoasVista.jpeg" alt="Friends enjoying fresh açaí with ocean views in Machico"
+            class="w-full h-full object-cover object-center
+              transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Block 15 — Portrait -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[300px] aspect-[4/5]">
+        <img src="../assets/images/VolleyCeu.jpeg"
+          alt="Jogo de voleibol na praia de Machico com céu azul — acai bowl madeira beach" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 16 — Square -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[280px] aspect-square">
+        <img src="../assets/images/AcaiOlim.jpeg" alt="Açaí SeaBerry no ambiente do Olímpo — açaí madeira funchal"
+          class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 17 — Portrait -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[300px] aspect-[4/5]">
+        <img src="../assets/images/AcaiRua.jpeg"
+          alt="Açaí SeaBerry sendo transportado nas ruas de Machico — açaí fresco Machico" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 18 — Square -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[280px] aspect-square">
+        <img src="../assets/images/AtendBanca.jpeg" alt="Team member serving açaí at the Machico beach stand" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 19 — Portrait -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[300px] aspect-[4/5]">
+        <img src="../assets/images/Praia2.jpeg" alt="Praia de Machico banhada pelo sol — açaí madeira beach" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+      <!-- Block 20 — Square (last item, adds trailing margin) -->
+      <div class="shrink-0 snap-start rounded-[16px] overflow-hidden
+        w-[240px] md:w-[280px] aspect-square
+        mr-6 md:mr-12">
+        <img src="../assets/images/AcaiVista.jpeg"
+          alt="Bowl de açaí com vista panorâmica de Machico, Madeira — acai bowl madeira beach" class="w-full h-full object-cover object-center
+            transition-transform duration-500 hover:scale-[1.04]" loading="lazy" />
+      </div>
+
+    </div>
+    <!-- /scroll strip -->
+
+    <!-- Gallery footer: photo count + Instagram CTA -->
+    <div class="px-6 md:px-12 max-w-[1200px] mx-auto mt-10
+        flex flex-col sm:flex-row items-start sm:items-center
+        justify-between gap-5" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+
+      <p class="font-inter text-[13px] text-[#8A8680]">
+        <span class="font-semibold text-[#3D3A36]">30 moments</span>
+        · Machico, Madeira
+      </p>
+
+      <!-- Instagram CTA -->
+      <a href="https://www.instagram.com/seaberry.acaii" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5
+          font-inter font-semibold text-[14px] tracking-[0.02em]
+          text-[#497536]
+          border-2 border-[#497536]
+          px-7 py-[11px] rounded-full
+          transition-all duration-200 ease-out
+          hover:bg-[#F0F5EE]
+          hover:-translate-y-[2px]
+          hover:shadow-[0_6px_20px_rgba(73,117,54,0.15)]
+          active:scale-[0.98]">
+        <svg width="15" height="15" stroke-width="2" aria-hidden="true">
+          <use href="#icon-instagram" />
+        </svg>
+        Follow on Instagram
+      </a>
+
+    </div>
+
+  </section>
+  <!-- /GALLERY SECTION -->
+
+
+  <!-- =========================
+       REVIEWS SECTION (#reviews)
+       ========================= -->
+  <section id="reviews" class="bg-[#F8F7F5] py-24 px-6 md:px-12 overflow-hidden">
+    <div class="max-w-[1200px] mx-auto">
+
+      <!-- Reviews header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+
+        <div>
+          <!-- Section label -->
+          <div class="flex items-center gap-3 mb-4" data-aos="fade-up" data-aos-duration="700">
+            <div class="w-7 h-[2px] bg-[#497536] rounded-full"></div>
+            <span class="font-inter font-medium text-[11px] tracking-[0.16em] uppercase text-[#497536]">
+              Reviews
+            </span>
+          </div>
+
+          <!-- Section H2 -->
+          <h2 class="font-sora font-bold text-[36px] md:text-[40px]
+              tracking-[-0.025em] leading-[1.1] text-[#3E2C56]" data-aos="fade-up" data-aos-duration="800"
+            data-aos-delay="100">
+            What our<br class="hidden sm:block" /> customers say
+          </h2>
+        </div>
+
+        <!-- Global rating badge -->
+        <div class="flex items-center gap-4 pb-1 shrink-0" data-aos="fade-up" data-aos-duration="700"
+          data-aos-delay="200">
+          <!-- 5 large stars -->
+          <div class="flex items-center gap-[3px]">
+            <svg class="w-5 h-5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-5 h-5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-5 h-5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-5 h-5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-5 h-5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-sora font-bold text-[22px] tracking-[-0.02em] text-[#3E2C56] leading-none">4.9</p>
+            <p class="font-inter text-[12px] text-[#8A8680] mt-0.5">Google Reviews</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Review cards grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- ─────────────────────────────────────── -->
+        <!-- CARD 1 · Dylan Chow 🇬🇧 · FEATURED      -->
+        <!-- ─────────────────────────────────────── -->
+        <div class="relative bg-white rounded-[20px]
+            border-[1.5px] border-[#94358F]/20
+            p-7 flex flex-col gap-5
+            shadow-[0_4px_24px_rgba(62,44,86,0.08)]
+            lg:scale-[1.02] lg:z-10" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <!-- Featured pill -->
+          <div class="absolute -top-3.5 left-7">
+            <span class="inline-flex items-center gap-1.5
+              bg-[#3E2C56] text-white
+              font-inter font-semibold text-[10px] tracking-[0.12em] uppercase
+              px-3.5 py-1.5 rounded-full">
+              <svg width="9" height="9" fill="currentColor" aria-hidden="true">
+                <use href="#icon-star" />
+              </svg>
+              Featured
+            </span>
+          </div>
+
+          <!-- 5 small stars -->
+          <div class="flex gap-[2px] shrink-0 -mb-2" aria-label="4.9 stars">
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+          </div>
+
+          <p class="font-inter font-normal text-[15px] leading-[1.7] text-[#3D3A36] flex-1">
+            Small business that takes pride in every detail. A little truck that faces the beach!
+          </p>
+          <div class="h-px bg-[#F0EEE9]"></div>
+
+          <div class="flex items-center gap-3 mt-1">
+            <div class="w-10 h-10 rounded-full bg-[#EAE3F2]
+              flex items-center justify-center shrink-0">
+              <span class="font-sora font-bold text-[14px] text-[#3E2C56]">D</span>
+            </div>
+            <div>
+              <p class="font-sora font-semibold text-[14px] text-[#3E2C56] leading-tight">
+                Dylan Chow
+              </p>
+              <p class="font-inter text-[11px] text-[#8A8680] mt-0.5 flex items-center gap-1.5">
+                United Kingdom <img src="https://flagcdn.com/gb.svg" alt="UK"
+                  class="w-3.5 h-[10px] object-cover rounded-[1.5px] shadow-sm" />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────────────────────── -->
+        <!-- CARD 2 · Joana Ferreira 🇵🇹             -->
+        <!-- ─────────────────────────────────────── -->
+        <div class="bg-white rounded-[20px]
+            border border-[#F0EEE9]
+            p-7 flex flex-col gap-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="flex gap-[2px] shrink-0 -mb-2" aria-label="5 stars">
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+          </div>
+          <p class="font-inter font-normal text-[15px] leading-[1.7] text-[#3D3A36] flex-1">
+            Staf fantástico, sabor maravilhoso! Um dos melhores açaís que já comi na vida! Aconselho imenso.
+          </p>
+          <div class="h-px bg-[#F0EEE9]"></div>
+          <div class="flex items-center gap-3 mt-1">
+            <div class="w-10 h-10 rounded-full bg-[#E8F4E3]
+              flex items-center justify-center shrink-0">
+              <span class="font-sora font-bold text-[14px] text-[#497536]">J</span>
+            </div>
+            <div>
+              <p class="font-sora font-semibold text-[14px] text-[#3E2C56] leading-tight">
+                Joana Ferreira
+              </p>
+              <p class="font-inter text-[11px] text-[#8A8680] mt-0.5 flex items-center gap-1.5">
+                Portugal <img src="https://flagcdn.com/pt.svg" alt="PT"
+                  class="w-3.5 h-[10px] object-cover rounded-[1.5px] shadow-sm" />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────────────────────── -->
+        <!-- CARD 3 · Carla Sofia Pontes 🇵🇹          -->
+        <!-- ─────────────────────────────────────── -->
+        <div class="bg-white rounded-[20px]
+            border border-[#F0EEE9]
+            p-7 flex flex-col gap-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="flex gap-[2px] shrink-0 -mb-2" aria-label="5 stars">
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+          </div>
+          <p class="font-inter font-normal text-[15px] leading-[1.7] text-[#3D3A36] flex-1">
+            Excelente açaí, sempre fresco e delicioso! O atendimento é rápido e muito simpático. Recomendo a 100%!
+          </p>
+          <div class="h-px bg-[#F0EEE9]"></div>
+          <div class="flex items-center gap-3 mt-1">
+            <div class="w-10 h-10 rounded-full bg-[#E8F4E3]
+              flex items-center justify-center shrink-0">
+              <span class="font-sora font-bold text-[14px] text-[#497536]">C</span>
+            </div>
+            <div>
+              <p class="font-sora font-semibold text-[14px] text-[#3E2C56] leading-tight">
+                Carla Sofia Pontes
+              </p>
+              <p class="font-inter text-[11px] text-[#8A8680] mt-0.5 flex items-center gap-1.5">
+                Portugal <img src="https://flagcdn.com/pt.svg" alt="PT"
+                  class="w-3.5 h-[10px] object-cover rounded-[1.5px] shadow-sm" />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────────────────────── -->
+        <!-- CARD 4 · Alissa Grothey 🇩🇪              -->
+        <!-- Spans 2 columns on desktop (longer review) -->
+        <!-- ─────────────────────────────────────── -->
+        <div class="bg-white rounded-[20px]
+            border border-[#F0EEE9]
+            p-7 flex flex-col gap-5
+            lg:col-span-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="flex gap-[2px] shrink-0 -mb-2" aria-label="5 estrelas">
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+          </div>
+          <p class="font-inter font-normal text-[15px] leading-[1.7] text-[#3D3A36] flex-1">
+            Very lovely and nice service. You can immediately taste the loving preparation of the açaí bowl. We
+            travelled an extra half an hour two days in a row to eat the açaí here. I can only recommend it!
+          </p>
+          <div class="h-px bg-[#F0EEE9]"></div>
+          <div class="flex items-center gap-3 mt-1">
+            <div class="w-10 h-10 rounded-full bg-[#EAE3F2]
+              flex items-center justify-center shrink-0">
+              <span class="font-sora font-bold text-[14px] text-[#3E2C56]">A</span>
+            </div>
+            <div>
+              <p class="font-sora font-semibold text-[14px] text-[#3E2C56] leading-tight">
+                Alissa Grothey
+              </p>
+              <p class="font-inter text-[11px] text-[#8A8680] mt-0.5 flex items-center gap-1.5">
+                Germany <img src="https://flagcdn.com/de.svg" alt="DE"
+                  class="w-3.5 h-[10px] object-cover rounded-[1.5px] shadow-sm" />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─────────────────────────────────────── -->
+        <!-- CARD 5 · Carmen Jorissen 🇳🇱             -->
+        <!-- ─────────────────────────────────────── -->
+        <div class="bg-white rounded-[20px]
+            border border-[#F0EEE9]
+            p-7 flex flex-col gap-5" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="flex gap-[2px] shrink-0 -mb-2" aria-label="5 estrelas">
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+            <svg class="w-3.5 h-3.5 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+              <use href="#icon-star" />
+            </svg>
+          </div>
+          <p class="font-inter font-normal text-[15px] leading-[1.7] text-[#3D3A36] flex-1">
+            Surprisingly good! We had the medium one with granola, strawberry, powdered milk and dulce de leche. It's a
+            bit like frozen yoghurt with fruit flavour, really good and refreshing.
+          </p>
+          <div class="h-px bg-[#F0EEE9]"></div>
+          <div class="flex items-center gap-3 mt-1">
+            <div class="w-10 h-10 rounded-full bg-[#EAE3F2]
+              flex items-center justify-center shrink-0">
+              <span class="font-sora font-bold text-[14px] text-[#3E2C56]">C</span>
+            </div>
+            <div>
+              <p class="font-sora font-semibold text-[14px] text-[#3E2C56] leading-tight">
+                Carmen Jorissen
+              </p>
+              <p class="font-inter text-[11px] text-[#8A8680] mt-0.5 flex items-center gap-1.5">
+                Netherlands <img src="https://flagcdn.com/nl.svg" alt="NL"
+                  class="w-3.5 h-[10px] object-cover rounded-[1.5px] shadow-sm" />
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /review cards grid -->
+
+      <!-- Reviews footer CTA -->
+      <div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up"
+        data-aos-duration="700" data-aos-delay="100">
+        <p class="font-inter text-[14px] text-[#8A8680] text-center">
+          Join hundreds of happy customers
+          <span class="inline-block ml-1">·</span>
+          <span class="text-[#F5A623] ml-1">★★★★★</span>
+          <span class="font-semibold text-[#3D3A36] ml-1">Google Reviews</span>
+        </p>
+
+        <a href="https://maps.app.goo.gl/U184tsYx5aTtsRvg6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 shrink-0
+            font-inter font-semibold text-[14px] tracking-[0.02em]
+            text-[#497536]
+            border-2 border-[#497536]
+            px-7 py-[11px] rounded-full
+            transition-all duration-200 ease-out
+            hover:bg-[#F0F5EE]
+            hover:-translate-y-[2px]
+            hover:shadow-[0_6px_20px_rgba(73,117,54,0.15)]
+            active:scale-[0.98] active:translate-y-0">
+          <svg width="14" height="14" stroke-width="2.2" aria-hidden="true">
+            <use href="#icon-pin" />
+          </svg>
+          See all reviews
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <!-- /REVIEWS SECTION -->
+
+
+  <!-- =========================
+       LOCATION SECTION (#localizacao)
+       ========================= -->
+  <section id="localizacao" class="bg-[#3E2C56] py-24 px-6 md:px-12
+      rounded-t-[32px] overflow-hidden relative">
+
+    <!-- Decorative background circles -->
+    <div class="absolute -top-24 -right-24 w-[360px] h-[360px]
+      rounded-full bg-[#94358F]/10 pointer-events-none"></div>
+    <div class="absolute -bottom-16 -left-16 w-[240px] h-[240px]
+      rounded-full bg-[#497536]/10 pointer-events-none"></div>
+
+    <div class="max-w-[1200px] mx-auto relative z-10">
+
+      <!-- Section header -->
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-4" data-aos="fade-up" data-aos-duration="700">
+          <div class="w-7 h-[2px] bg-[#6aaa52] rounded-full"></div>
+          <span class="font-inter font-medium text-[11px] tracking-[0.16em]
+            uppercase text-[#6aaa52]">
+            Where we are
+          </span>
+        </div>
+
+        <h2 class="font-sora font-bold text-[36px] md:text-[44px]
+            tracking-[-0.025em] leading-[1.1] text-white" data-aos="fade-up" data-aos-duration="800"
+          data-aos-delay="100">
+          Come visit us
+        </h2>
+      </div>
+
+      <!-- Main grid: map left / info right -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 items-start">
+
+        <!-- Map embed -->
+        <div class="rounded-[20px] overflow-hidden
+            shadow-[0_8px_40px_rgba(0,0,0,0.25)]" data-aos="fade-right" data-aos-duration="900" data-aos-delay="100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13427.499781796318!2d-16.76621016609074!3d32.715950580413384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6063b1475de849%3A0x23efb75a180183f8!2zU2VhIEJlcnJ5IEHDp2HDrQ!5e0!3m2!1spt-PT!2spt!4v1776442761869!5m2!1spt-PT!2spt"
+            width="100%" height="380" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="SeaBerry Açaí Location — Machico Beach, Madeira"></iframe>
+        </div>
+
+        <!-- Info panel + social links -->
+        <div class="flex flex-col gap-8" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+
+          <!-- Address row -->
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-[10px] bg-white/10
+              flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="16" height="16" stroke="white" aria-hidden="true">
+                <use href="#icon-pin" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-inter font-semibold text-[11px] tracking-[0.12em]
+                uppercase text-white/40 mb-1">Address</p>
+              <p class="font-inter text-[15px] text-white/85 leading-[1.6]">
+                Praia de Areia, Machico<br />
+                Madeira, Portugal
+              </p>
+            </div>
+          </div>
+
+          <!-- Hours row -->
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-[10px] bg-white/10
+              flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="16" height="16" stroke="white" aria-hidden="true">
+                <use href="#icon-clock" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-inter font-semibold text-[11px] tracking-[0.12em]
+                uppercase text-white/40 mb-1">Hours</p>
+              <p class="font-inter text-[15px] text-white/85 leading-[1.6]">
+                Every day
+              </p>
+              <p class="font-sora font-semibold text-[18px] text-white mt-0.5">
+                12:00 — 19:30
+              </p>
+            </div>
+          </div>
+
+          <div class="h-px bg-white/10"></div>
+
+          <!-- Directions CTA -->
+          <a href="https://maps.app.goo.gl/U184tsYx5aTtsRvg6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 self-start
+              font-inter font-semibold text-[15px] tracking-[0.02em]
+              text-white bg-white/10 backdrop-blur-sm
+              border border-white/20
+              px-7 py-[13px] rounded-full
+              transition-all duration-200 ease-out
+              hover:bg-white/20
+              hover:-translate-y-[2px]
+              hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]
+              active:scale-[0.98] active:translate-y-0">
+            <svg width="15" height="15" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <use href="#icon-pin" />
+            </svg>
+            Get Directions
+          </a>
+
+          <div class="h-px bg-white/10"></div>
+
+          <!-- Social links -->
+          <div>
+            <p class="font-inter font-semibold text-[11px] tracking-[0.12em]
+              uppercase text-white/40 mb-5">Follow Us</p>
+
+            <div class="flex items-center gap-3">
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/seaberry.acaii" target="_blank" rel="noopener noreferrer"
+                aria-label="SeaBerry Açaí no Instagram" class="w-11 h-11 rounded-full
+                  border border-white/20 bg-white/8
+                  flex items-center justify-center
+                  text-white/70
+                  transition-all duration-200
+                  hover:bg-[#6aaa52] hover:border-[#6aaa52]
+                  hover:text-white hover:-translate-y-[2px]
+                  active:scale-[0.96]">
+                <svg width="17" height="17" stroke-width="1.8" aria-hidden="true">
+                  <use href="#icon-instagram" />
+                </svg>
+              </a>
+
+              <!-- TikTok -->
+              <a href="https://www.tiktok.com/@seaberry.acaii" target="_blank" rel="noopener noreferrer"
+                aria-label="SeaBerry Açaí no TikTok" class="w-11 h-11 rounded-full
+                  border border-white/20 bg-white/8
+                  flex items-center justify-center
+                  text-white/70
+                  transition-all duration-200
+                  hover:bg-[#6aaa52] hover:border-[#6aaa52]
+                  hover:text-white hover:-translate-y-[2px]
+                  active:scale-[0.96]">
+                <svg width="15" height="15" aria-hidden="true">
+                  <use href="#icon-tiktok" />
+                </svg>
+              </a>
+
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/people/Sea-Berry-Açaí/61561646432174/" target="_blank"
+                rel="noopener noreferrer" aria-label="SeaBerry Açaí no Facebook" class="w-11 h-11 rounded-full
+                  border border-white/20 bg-white/8
+                  flex items-center justify-center
+                  text-white/70
+                  transition-all duration-200
+                  hover:bg-[#6aaa52] hover:border-[#6aaa52]
+                  hover:text-white hover:-translate-y-[2px]
+                  active:scale-[0.96]">
+                <svg width="16" height="16" aria-hidden="true">
+                  <use href="#icon-facebook" />
+                </svg>
+              </a>
+
+            </div>
+
+            <!-- Instagram handle -->
+            <p class="font-inter text-[13px] text-white/35 mt-4 tracking-wide">
+              @seaberry.acaii
+            </p>
+          </div>
+
+        </div>
+        <!-- /info panel -->
+
+      </div>
+    </div>
+  </section>
+  <!-- /LOCATION SECTION -->
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="bg-[#1A1815] px-6 md:px-12 pt-16 pb-8">
+    <div class="max-w-[1200px] mx-auto">
+
+      <!-- Footer main grid: 4 columns -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+          gap-10 lg:gap-12 pb-12
+          border-b border-white/8" data-aos="fade-up" data-aos-duration="800">
+
+        <!-- Col 1 — Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+
+          <!-- Logotype + tagline + stars:
+               Mobile: logo à esquerda, tagline + stars empilhados à direita.
+               Desktop: idêntico (flex row mantém-se). -->
+          <div class="flex items-start gap-4 mb-6">
+
+            <!-- Logo -->
+            <a href="#" aria-label="SeaBerry Açaí logo"
+              class="inline-block group outline-none focus-visible:ring-2 focus-visible:ring-[#6aaa52] rounded-md shrink-0">
+              <img src="../assets/images/LogoAcaiTrans.png" alt="SeaBerry Açaí logo"
+                class="h-14 w-auto object-contain brightness-0 invert opacity-70 transition-all duration-300 group-hover:opacity-90" />
+            </a>
+
+            <!-- Tagline + mini rating (side-by-side with logo on both breakpoints) -->
+            <div class="flex flex-col justify-center gap-2 pt-1">
+              <p class="font-inter font-normal text-[15px] leading-[1.5] text-white/60">
+                The true taste of summer
+              </p>
+              <!-- Mini rating -->
+              <div class="flex items-center gap-2">
+                <div class="flex gap-[2px]" aria-label="5 estrelas">
+                  <svg class="w-3 h-3 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-star" />
+                  </svg>
+                  <svg class="w-3 h-3 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-star" />
+                  </svg>
+                  <svg class="w-3 h-3 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-star" />
+                  </svg>
+                  <svg class="w-3 h-3 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-star" />
+                  </svg>
+                  <svg class="w-3 h-3 text-[#F5A623]" fill="currentColor" aria-hidden="true">
+                    <use href="#icon-star" />
+                  </svg>
+                </div>
+                <span class="font-inter text-[12px] text-white/35">4.9 on Google</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Col 2 — Quick navigation -->
+        <div>
+          <p class="font-inter font-semibold text-[11px] tracking-[0.14em]
+            uppercase text-white/35 mb-5">
+            Navigate
+          </p>
+          <nav class="flex flex-col gap-3" aria-label="Footer navigation">
+            <a href="#hero" class="font-inter text-[14px] text-white/55
+                hover:text-[#6aaa52] transition-colors duration-150">
+              Home
+            </a>
+            <a href="#sobre" class="font-inter text-[14px] text-white/55
+                hover:text-[#6aaa52] transition-colors duration-150">
+              Our Mission
+            </a>
+            <a href="#lifestyle" class="font-inter text-[14px] text-white/55
+                hover:text-[#6aaa52] transition-colors duration-150">
+              Experience
+            </a>
+            <a href="#galeria" class="font-inter text-[14px] text-white/55
+                hover:text-[#6aaa52] transition-colors duration-150">
+              Gallery
+            </a>
+            <a href="#reviews" class="font-inter text-[14px] text-white/55
+                hover:text-[#6aaa52] transition-colors duration-150">
+              Reviews
+            </a>
+            <a href="#localizacao" class="font-inter text-[14px] text-white/55
+                hover:text-[#6aaa52] transition-colors duration-150">
+              Location
+            </a>
+          </nav>
+        </div>
+
+        <!-- Col 3 — Contact & hours -->
+        <div>
+          <p class="font-inter font-semibold text-[11px] tracking-[0.14em]
+            uppercase text-white/35 mb-5">
+            Information
+          </p>
+
+          <div class="flex flex-col gap-4">
+
+            <!-- Address -->
+            <div class="flex gap-3 items-start">
+              <svg class="w-4 h-4 text-white/25 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#icon-pin" />
+              </svg>
+              <p class="font-inter text-[13px] text-white/50 leading-[1.6]">
+                Praia de Areia<br />
+                Machico, Madeira
+              </p>
+            </div>
+
+            <!-- Hours -->
+            <div class="flex gap-3 items-start">
+              <svg class="w-4 h-4 text-white/25 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#icon-clock" />
+              </svg>
+              <div>
+                <p class="font-inter text-[13px] text-white/50 leading-[1.6]">
+                  Every day
+                </p>
+                <p class="font-inter font-semibold text-[13px] text-white/70">
+                  12:00 — 19:30
+                </p>
+              </div>
+            </div>
+
+            <!-- Season -->
+            <div class="flex gap-3 items-start">
+              <svg class="w-4 h-4 text-white/25 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              <p class="font-inter text-[13px] text-white/50 leading-[1.6]">
+                Summer season<br />
+                Machico · Since 2024
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Col 4 — Social media + CTA -->
+        <div>
+          <p class="font-inter font-semibold text-[11px] tracking-[0.14em]
+            uppercase text-white/35 mb-5">
+            Social Media
+          </p>
+
+          <div class="flex flex-col gap-4 mb-8">
+
+            <!-- Instagram link -->
+            <a href="https://www.instagram.com/seaberry.acaii" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-3 group">
+              <div class="w-8 h-8 rounded-[8px] bg-white/8 border border-white/10
+                flex items-center justify-center shrink-0
+                group-hover:bg-[#6aaa52] group-hover:border-[#6aaa52]
+                transition-all duration-200">
+                <svg width="14" height="14" stroke="white" stroke-width="1.8" aria-hidden="true">
+                  <use href="#icon-instagram" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-inter text-[13px] text-white/60
+                  group-hover:text-white transition-colors duration-150">
+                  Instagram
+                </p>
+                <p class="font-inter text-[11px] text-white/30">@seaberry.acaii</p>
+              </div>
+            </a>
+
+            <!-- TikTok link -->
+            <a href="https://www.tiktok.com/@seaberry.acaii" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-3 group">
+              <div class="w-8 h-8 rounded-[8px] bg-white/8 border border-white/10
+                flex items-center justify-center shrink-0
+                group-hover:bg-[#6aaa52] group-hover:border-[#6aaa52]
+                transition-all duration-200">
+                <svg width="12" height="12" fill="white" aria-hidden="true">
+                  <use href="#icon-tiktok" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-inter text-[13px] text-white/60
+                  group-hover:text-white transition-colors duration-150">
+                  TikTok
+                </p>
+                <p class="font-inter text-[11px] text-white/30">@seaberry.acaii</p>
+              </div>
+            </a>
+
+            <!-- Facebook link -->
+            <a href="https://www.facebook.com/people/Sea-Berry-Açaí/61561646432174/" target="_blank"
+              rel="noopener noreferrer" class="flex items-center gap-3 group">
+              <div class="w-8 h-8 rounded-[8px] bg-white/8 border border-white/10
+                flex items-center justify-center shrink-0
+                group-hover:bg-[#6aaa52] group-hover:border-[#6aaa52]
+                transition-all duration-200">
+                <svg width="13" height="13" fill="white" aria-hidden="true">
+                  <use href="#icon-facebook" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-inter text-[13px] text-white/60
+                  group-hover:text-white transition-colors duration-150">
+                  Facebook
+                </p>
+                <p class="font-inter text-[11px] text-white/30">Sea Berry Açaí</p>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Footer CTA button -->
+          <a href="https://maps.app.goo.gl/U184tsYx5aTtsRvg6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2
+              font-inter font-semibold text-[13px] tracking-[0.02em]
+              text-white bg-[#497536]
+              px-5 py-[10px] rounded-full
+              transition-all duration-200 ease-out
+              hover:bg-[#6aaa52]
+              hover:-translate-y-[2px]
+              hover:shadow-[0_8px_24px_rgba(73,117,54,0.35)]
+              active:scale-[0.98]">
+            Visit Us
+            <svg width="13" height="13" aria-hidden="true">
+              <use href="#icon-arrow-right" />
+            </svg>
+          </a>
+
+        </div>
+        <!-- /Col 4 -->
+
+      </div>
+      <!-- /footer main grid -->
+
+      <!-- Copyright bar -->
+      <div class="pt-7 flex flex-col sm:flex-row items-center
+          justify-between gap-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+        <p class="font-inter text-[12px] text-white/25 text-center sm:text-left">
+          © 2024 SeaBerry Açaí · All rights reserved
+        </p>
+        <p class="font-inter text-[12px] text-white/20 text-center">
+          Made with ❤️ in Machico, Madeira
+        </p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+
+  <!-- Site JS (AOS init + Tailwind flag) — loaded last so DOM is ready -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+/* ============================================================
+   SeaBerry Açaí — Custom Stylesheet
+   style.css
+   
+   Sections:
+     1. Design Tokens (:root)
+     2. Global Base
+     3. Scrollbar Utility
+     4. Accessibility — Reduced Motion
+   ============================================================ */
+
+
+/* =========================
+   1. DESIGN TOKENS
+   ========================= */
+/*
+  All visual values are managed via Tailwind utility classes
+  directly in the HTML. The tokens below exist for reference
+  and for any non-Tailwind custom rules that may be added.
+
+  Color Palette:
+    --color-green-dark:   #497536
+    --color-green-light:  #6aaa52
+    --color-green-bg:     #E8F4E3
+    --color-purple-dark:  #3E2C56
+    --color-purple-light: #94358F
+    --color-purple-bg:    #EAE3F2
+    --color-sand:         #F8F7F5
+    --color-sand-border:  #F0EEE9
+    --color-text-dark:    #3D3A36
+    --color-text-muted:   #8A8680
+    --color-star:         #F5A623
+    --color-footer-bg:    #1A1815
+
+  Typography:
+    --font-heading: 'Sora', sans-serif
+    --font-body:    'Inter', sans-serif
+*/
+
+:root {
+  --color-green-dark:   #497536;
+  --color-green-light:  #6aaa52;
+  --color-green-bg:     #E8F4E3;
+  --color-purple-dark:  #3E2C56;
+  --color-purple-light: #94358F;
+  --color-purple-bg:    #EAE3F2;
+  --color-sand:         #F8F7F5;
+  --color-sand-border:  #F0EEE9;
+  --color-text-dark:    #3D3A36;
+  --color-text-muted:   #8A8680;
+  --color-star:         #F5A623;
+  --color-footer-bg:    #1A1815;
+
+  --font-heading: 'Sora', sans-serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+
+/* =========================
+   2. GLOBAL BASE
+   ========================= */
+
+/*
+  Smooth scroll is set at the document level.
+  Controlled via prefers-reduced-motion below.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* =========================
+   3. SCROLLBAR UTILITY
+   ========================= */
+
+/* Hide scrollbar on the horizontal gallery strip while retaining scroll functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE / Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+
+/* =========================
+   4. ACCESSIBILITY — REDUCED MOTION
+   ========================= */
+
+/*
+  Respects the user's OS preference for reduced motion.
+  Disables all CSS transitions, animations, and scroll behaviour.
+  AOS animations are also suppressed (controlled via JS AOS.init disable flag).
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:       0.01ms !important;
+    animation-iteration-count: 1     !important;
+    transition-duration:      0.01ms !important;
+    scroll-behavior:          auto   !important;
+  }
+
+  /* Suppress AOS enter/leave transitions */
+  [data-aos] {
+    transition: none !important;
+    animation:  none !important;
+  }
+}

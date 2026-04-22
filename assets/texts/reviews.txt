@@ -1,0 +1,29 @@
+Review 1
+- Nome da pessoa: Dylan Chow
+- Número de estrelas: 5
+- Texto completo: Small business that takes pride in every detail. A little truck that faces the beach!
+- Nacionalidade: 🇬🇧
+
+Review 2
+- Nome da pessoa: Joana Ferreira
+- Número de estrelas: 5
+- Texto completo: Staf fantástico, sabor maravilhoso! Um dos melhores açaís que já comi na vida! Aconselho imenso.
+- Nacionalidade: 🇵🇹
+
+Review 3
+- Nome da pessoa: Carla Sofia Pontes
+- Número de estrelas: 5
+- Texto completo: Excelente açaí, sempre fresco e delicioso! O atendimento é rápido e muito simpático. Recomendo a 100%!
+- Nacionalidade: 🇵🇹
+
+Review 4
+- Nome da pessoa: Alissa Grothey
+- Número de estrelas: 5
+- Texto completo: Very lovely and nice service. You can immediately taste the loving preparation of the açaí bowl. We travelled an extra half an hour two days in a row to eat the açaí here. I can only recommend it!
+- Nacionalidade: 🇩🇪
+
+Review 5
+- Nome da pessoa: Carmen Jorissen
+- Número de estrelas: 5
+- Texto completo: Surprisingly good! We had the medium one with granola, strawberry, powdered milk and dulce de leche. It's a bit like frozen yoghurt with fruit flavour, really good and refreshing.
+- Nacionalidade: 🇳🇱

@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SeaBerry Açaí — Design Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple-dark: #3E2C56;
+    --purple-mid:  #94358F;
+    --green:       #497536;
+    --green-light: #6aaa52;
+    --white:       #FFFFFF;
+    --off-white:   #F8F7F5;
+    --gray-100:    #F0EEE9;
+    --gray-300:    #C8C4BC;
+    --gray-500:    #8A8680;
+    --gray-700:    #3D3A36;
+    --black:       #1A1815;
+
+    --font-heading: 'Sora', sans-serif;
+    --font-body:    'Inter', sans-serif;
+
+    --radius-sm:  6px;
+    --radius-md:  12px;
+    --radius-lg:  20px;
+    --radius-xl:  32px;
+    --radius-pill: 999px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--off-white);
+    color: var(--gray-700);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── LAYOUT ─────────────────────────────── */
+  .page-wrap { max-width: 940px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ── COVER ──────────────────────────────── */
+  .cover {
+    background: var(--purple-dark);
+    color: var(--white);
+    padding: 72px 40px 64px;
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    margin-bottom: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(148,53,143,0.25);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(73,117,54,0.3);
+  }
+  .cover-inner { position: relative; z-index: 1; max-width: 680px; }
+  .cover-tag {
+    display: inline-block;
+    background: rgba(148,53,143,0.35);
+    color: #D9A8D7;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .cover h1 span { color: #C87AC4; }
+  .cover p {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    line-height: 1.7;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 400;
+  }
+  .cover-meta-item strong {
+    display: block;
+    color: rgba(255,255,255,0.8);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  /* ── TOC ────────────────────────────────── */
+  .toc {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin-bottom: 64px;
+  }
+  .toc-title {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 16px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 6px;
+  }
+  .toc a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--gray-700);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    transition: background 0.15s, color 0.15s;
+  }
+  .toc a:hover { background: var(--gray-100); color: var(--purple-dark); }
+  .toc a .toc-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--purple-mid);
+    min-width: 20px;
+  }
+
+  /* ── SECTION ────────────────────────────── */
+  .section { margin-bottom: 64px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1.5px solid var(--gray-100);
+  }
+  .section-num {
+    background: var(--purple-dark);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 700;
+    width: 32px; height: 32px;
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section h2 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--purple-dark);
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+  }
+
+  /* ── CARDS ──────────────────────────────── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+  }
+  .card + .card { margin-top: 16px; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── COLORS ─────────────────────────────── */
+  .color-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .color-swatch {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    width: 140px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .color-swatch-bar { height: 72px; }
+  .color-swatch-info { padding: 10px 12px; background: var(--white); }
+  .color-swatch-name { font-weight: 600; font-size: 13px; color: var(--gray-700); }
+  .color-swatch-hex { font-family: monospace; font-size: 12px; color: var(--gray-500); margin-top: 2px; }
+  .color-swatch-role { font-size: 11px; color: var(--gray-500); margin-top: 2px; line-height: 1.4; }
+
+  .usage-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: var(--radius-pill);
+    margin: 3px 3px 3px 0;
+  }
+  .tag-do   { background: #E8F4E3; color: #2E6B1D; }
+  .tag-dont { background: #FDE8E8; color: #8B2020; }
+
+  /* ── TYPOGRAPHY ─────────────────────────── */
+  .type-sample {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .type-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .type-meta-item { font-size: 12px; color: var(--gray-500); }
+  .type-meta-item strong { font-weight: 600; color: var(--gray-700); font-size: 12px; }
+
+  .demo-h1  { font-family: var(--font-heading); font-size: 56px; font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; color: var(--purple-dark); }
+  .demo-h1m { font-family: var(--font-heading); font-size: 38px; font-weight: 700; line-height: 1.1;  letter-spacing: -0.025em; color: var(--purple-dark); }
+  .demo-h2  { font-family: var(--font-heading); font-size: 36px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; color: var(--purple-dark); }
+  .demo-h2m { font-family: var(--font-heading); font-size: 26px; font-weight: 600; line-height: 1.2;  color: var(--purple-dark); }
+  .demo-h3  { font-family: var(--font-heading); font-size: 22px; font-weight: 600; line-height: 1.3;  color: var(--gray-700); }
+  .demo-h3m { font-family: var(--font-heading); font-size: 18px; font-weight: 600; line-height: 1.3;  color: var(--gray-700); }
+  .demo-impact { font-family: var(--font-heading); font-size: 20px; font-weight: 600; letter-spacing: 0.03em; color: var(--green); text-transform: uppercase; }
+  .demo-body    { font-family: var(--font-body);    font-size: 16px; font-weight: 400; line-height: 1.7; color: var(--gray-700); }
+  .demo-small   { font-family: var(--font-body);    font-size: 14px; font-weight: 400; line-height: 1.6; color: var(--gray-500); }
+  .demo-btn     { font-family: var(--font-body);    font-size: 15px; font-weight: 600; letter-spacing: 0.02em; color: var(--white); }
+  .demo-label   { font-family: var(--font-body);    font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
+
+  /* ── BUTTONS ────────────────────────────── */
+  .btn-demo-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-pill);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    text-decoration: none;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0) scale(0.98); }
+
+  .btn-primary { background: var(--green); color: var(--white); padding: 14px 32px; }
+  .btn-primary:hover { background: var(--green-light); box-shadow: 0 8px 24px rgba(73,117,54,0.32); }
+
+  .btn-secondary { background: var(--white); color: var(--green); border-color: var(--green); padding: 12px 28px; }
+  .btn-secondary:hover { background: #F0F5EE; box-shadow: 0 6px 20px rgba(73,117,54,0.15); }
+
+  .btn-dark { background: var(--purple-dark); color: var(--white); padding: 14px 32px; }
+  .btn-dark:hover { background: #52396E; box-shadow: 0 8px 24px rgba(62,44,86,0.32); }
+
+  .btn-ghost { background: transparent; color: var(--purple-dark); border-color: var(--purple-dark); padding: 12px 28px; }
+  .btn-ghost:hover { background: rgba(62,44,86,0.06); }
+
+  .btn-sm { padding: 10px 22px; font-size: 13px; }
+  .btn-lg { padding: 18px 44px; font-size: 17px; }
+
+  /* ── SPACING TABLE ──────────────────────── */
+  table.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.spec-table th {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-500);
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1.5px solid var(--gray-100);
+  }
+  table.spec-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--gray-100);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  table.spec-table tr:last-child td { border-bottom: none; }
+  table.spec-table code {
+    background: var(--gray-100);
+    color: var(--purple-dark);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .tw { background: #EEF2FF; color: #3730A3; font-family: 'Courier New', monospace; font-size: 12px; padding: 2px 6px; border-radius: 4px; display: inline-block; margin: 2px 2px; }
+
+  /* ── ANIMATION CARDS ────────────────────── */
+  .anim-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .anim-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    padding: 20px;
+  }
+  .anim-card-icon {
+    width: 40px; height: 40px;
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .anim-card-title { font-family: var(--font-heading); font-size: 14px; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; }
+  .anim-card-desc  { font-size: 13px; color: var(--gray-500); line-height: 1.5; }
+  .anim-card-code  { margin-top: 10px; font-family: 'Courier New', monospace; font-size: 11px; color: var(--purple-mid); background: #F7F0F7; padding: 6px 8px; border-radius: 4px; line-height: 1.5; }
+
+  /* ── SECTION WIREFRAME ──────────────────── */
+  .wireframe {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .wf-header {
+    background: var(--gray-100);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--gray-300);
+  }
+  .wf-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-300); }
+  .wf-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-500); margin-left: auto; }
+  .wf-body { padding: 24px 28px; }
+  .wf-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 16px;
+  }
+  .wf-tag-hero    { background: #EAE3F2; color: var(--purple-dark); }
+  .wf-tag-brand   { background: #F0EEF6; color: var(--purple-mid); }
+  .wf-tag-life    { background: #E8F4E3; color: var(--green); }
+  .wf-tag-gallery { background: #EAE3F2; color: var(--purple-dark); }
+  .wf-tag-reviews { background: #FEF7EC; color: #9B6E10; }
+  .wf-tag-loc     { background: #E8F4E3; color: var(--green); }
+  .wf-spec-list { list-style: none; margin: 0; padding: 0; }
+  .wf-spec-list li {
+    display: flex; gap: 10px;
+    font-size: 13px; color: var(--gray-700);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .wf-spec-list li:last-child { border-bottom: none; }
+  .wf-spec-list li::before { content: "→"; color: var(--purple-mid); font-weight: 700; flex-shrink: 0; }
+  .wf-spec-list .detail { color: var(--gray-500); margin-left: auto; text-align: right; font-size: 12px; }
+
+  /* ── RULE BLOCKS ────────────────────────── */
+  .rule-block {
+    border-left: 3px solid var(--purple-mid);
+    padding: 14px 20px;
+    background: var(--white);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .rule-block.green-rule { border-color: var(--green); }
+  .rule-block strong { color: var(--purple-dark); font-weight: 600; }
+
+  /* ── MOBILE TIPS ────────────────────────── */
+  .tip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  .tip-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex; gap: 14px;
+  }
+  .tip-icon {
+    width: 36px; height: 36px; border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  .tip-icon.purple { background: #EAE3F2; }
+  .tip-icon.green  { background: #E8F4E3; }
+  .tip-card-title { font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--gray-700); margin-bottom: 4px; }
+  .tip-card-desc  { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+
+  /* ── FOOTER ─────────────────────────────── */
+  .footer {
+    background: var(--purple-dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    margin-top: 64px;
+    font-size: 13px;
+  }
+  .footer strong { color: rgba(255,255,255,0.85); font-family: var(--font-heading); }
+
+  /* ── UTILITIES ──────────────────────────── */
+  .divider { height: 1px; background: var(--gray-100); margin: 28px 0; }
+  .note {
+    background: #F5F0FA;
+    border: 1px solid #D9CBE8;
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--purple-dark);
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+  .note strong { font-weight: 600; }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: var(--radius-pill);
+  }
+  .badge-green  { background: #E8F4E3; color: var(--green); }
+  .badge-purple { background: #EAE3F2; color: var(--purple-dark); }
+
+  @media (max-width: 600px) {
+    .cover { padding: 48px 24px 44px; border-radius: 0 0 var(--radius-lg) var(--radius-lg); }
+    .page-wrap { padding: 0 16px 60px; }
+    .demo-h1 { font-size: 36px; }
+    .demo-h2 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-tag">Design Manual · v1.0</div>
+    <h1>SeaBerry <span>Açaí</span><br/>UX/UI Guide</h1>
+    <p>Manual completo de design e estilo para o site de marketing da SeaBerry Açaí — Machico, Madeira. Pronto para implementar em Tailwind CSS.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><strong>Stack</strong>Tailwind CSS + Vanilla JS</div>
+      <div class="cover-meta-item"><strong>Tipografia</strong>Sora + Inter (Google Fonts)</div>
+      <div class="cover-meta-item"><strong>Estrutura</strong>One-page · Mobile-first</div>
+      <div class="cover-meta-item"><strong>Objetivo</strong>Branding · Marketing emocional</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Índice</div>
+    <div class="toc-grid">
+      <a href="#cores"><span class="toc-num">01</span>Paleta de Cores</a>
+      <a href="#tipografia"><span class="toc-num">02</span>Tipografia</a>
+      <a href="#espacamento"><span class="toc-num">03</span>Espaçamento</a>
+      <a href="#botoes"><span class="toc-num">04</span>Botões & CTAs</a>
+      <a href="#animacoes"><span class="toc-num">05</span>Animações</a>
+      <a href="#seccoes"><span class="toc-num">06</span>Secções (Estrutura)</a>
+      <a href="#mobile"><span class="toc-num">07</span>Mobile-first</a>
+      <a href="#tailwind"><span class="toc-num">08</span>Config Tailwind</a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- 01 CORES -->
+  <!-- ════════════════════════════════════ -->
+  <div class="section" id="cores">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2>Paleta de Cores</h2>
+    </div>
+
+    <h3>Cores Principais</h3>
+    <div class="color-row">
+      <div class="color-swatch">
+        <div class="color-swatch-bar" style="background:#3E2C56;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Purple Dark</div>
+          <div class="color-swatch-hex">#3E2C56</div>
+          <div class="color-swatch-role">Premium · Destaque · Headers</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-bar" style="background:#94358F;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Purple Mid</div>
+          <div class="color-swatch-hex">#94358F</div>
+          <div class="color-swatch-role">Secundária · Acentos · Links</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-bar" style="background:#497536;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Green</div>
+          <div class="color-swatch-hex">#497536</div>
+          <div class="color-swatch-role">Principal · CTA · Natural</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-bar" style="background:#FFFFFF; border:1px solid #eee;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">White</div>
+          <div class="color-swatch-hex">#FFFFFF</div>
+          <div class="color-swatch-role">Base · Leveza · Cards</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Cores de Suporte</h3>
+    <div class="color-row">
+      <div class="color-swatch">
+        <div class="color-swatch-bar" style="background:#F8F7F5;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Off-White</div>
+          <div class="color-swatch-hex">#F8F7F5</div>
+          <div class="color-swatch-role">Background geral da página</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-bar" style="background:#F0EEE9;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Gray 100</div>
+          <div class="color-swatch-hex">#F0EEE9</div>
+          <div class="color-swatch-role">Divisores · Backgrounds subtis</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-bar" style="background:#8A8680;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Gray 500</div>
+          <div class="color-swatch-hex">#8A8680</div>
+          <div class="color-swatch-role">Texto secundário · Legendas</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-bar" style="background:#3D3A36;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Gray 700</div>
+          <div class="color-swatch-hex">#3D3A36</div>
+          <div class="color-swatch-role">Texto body principal</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Regras de Uso</h3>
+    <div class="card-grid">
+      <div class="card">
+        <div style="font-family:var(--font-heading);font-size:14px;font-weight:600;color:var(--purple-dark);margin-bottom:10px;">Roxo — Usar com Intenção</div>
+        <div style="margin-bottom:8px;">
+          <span class="usage-tag tag-do">✓ Usar</span>
+          <span class="usage-tag tag-do">✓ Hero title</span>
+          <span class="usage-tag tag-do">✓ Navbar</span>
+          <span class="usage-tag tag-do">✓ Footer bg</span>
+          <span class="usage-tag tag-do">✓ Badges</span>
+        </div>
+        <div>
+          <span class="usage-tag tag-dont">✗ Fundo de secções inteiras</span>
+          <span class="usage-tag tag-dont">✗ Mais de 30% da página</span>
+          <span class="usage-tag tag-dont">✗ Body text comum</span>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-family:var(--font-heading);font-size:14px;font-weight:600;color:var(--green);margin-bottom:10px;">Verde — CTAs e Energia Natural</div>
+        <div style="margin-bottom:8px;">
+          <span class="usage-tag tag-do">✓ Botão principal</span>
+          <span class="usage-tag tag-do">✓ Frases de destaque</span>
+          <span class="usage-tag tag-do">✓ Ícones de features</span>
+          <span class="usage-tag tag-do">✓ Hover states</span>
+        </div>
+        <div>
+          <span class="usage-tag tag-dont">✗ Texto long-form</span>
+          <span class="usage-tag tag-dont">✗ Backgrounds grandes</span>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-family:var(--font-heading);font-size:14px;font-weight:600;color:var(--gray-700);margin-bottom:10px;">Branco/Off-White — A Base</div>
+        <div style="margin-bottom:8px;">
+          <span class="usage-tag tag-do">✓ Fundo de 80%+ da página</span>
+          <span class="usage-tag tag-do">✓ Cards e modais</span>
+          <span class="usage-tag tag-do">✓ Navbar background</span>
+        </div>
+        <div>
+          <span class="usage-tag tag-dont">✗ Sobre fundo roxo escuro (contraste fraco)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Regra de ouro:</strong> O roxo cria luxo. O verde cria ação. O branco cria espaço. Nunca os três ao mesmo peso visual — hierarquia sempre.
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- 02 TIPOGRAFIA -->
+  <!-- ════════════════════════════════════ -->
+  <div class="section" id="tipografia">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2>Tipografia</h2>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;gap:32px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:8px;">Headings</div>
+          <div style="font-family:var(--font-heading);font-size:28px;font-weight:700;color:var(--purple-dark);line-height:1.1;">Sora</div>
+          <div style="font-size:12px;color:var(--gray-500);margin-top:4px;">google.com/fonts/specimen/Sora</div>
+          <div style="margin-top:10px;font-family:var(--font-heading);color:var(--gray-700);font-size:15px;">A B C D E F G H I J K L M<br/>N O P Q R S T U V W X Y Z</div>
+        </div>
+        <div style="width:1px;background:var(--gray-100);"></div>
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);margin-bottom:8px;">Body Text</div>
+          <div style="font-family:var(--font-body);font-size:28px;font-weight:600;color:var(--purple-dark);line-height:1.1;">Inter</div>
+          <div style="font-size:12px;color:var(--gray-500);margin-top:4px;">google.com/fonts/specimen/Inter</div>
+          <div style="margin-top:10px;font-family:var(--font-body);color:var(--gray-700);font-size:15px;">A B C D E F G H I J K L M<br/>N O P Q R S T U V W X Y Z</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Escala Tipográfica</h3>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Elemento</strong> H1 — Hero Title</div>
+        <div class="type-meta-item"><strong>Desktop</strong> 56px / weight 700</div>
+        <div class="type-meta-item"><strong>Mobile</strong> 38px / weight 700</div>
+        <div class="type-meta-item"><strong>Tracking</strong> -0.03em</div>
+        <div class="type-meta-item"><strong>Fonte</strong> Sora</div>
+      </div>
+      <div class="demo-h1">Make this<br/>summer yours.</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100);">
+        <span class="tw">font-sora</span>
+        <span class="tw">text-[56px]</span>
+        <span class="tw">md:text-[38px]</span>
+        <span class="tw">font-bold</span>
+        <span class="tw">tracking-tight</span>
+        <span class="tw">leading-[1.05]</span>
+      </div>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Elemento</strong> H2 — Section Title</div>
+        <div class="type-meta-item"><strong>Desktop</strong> 36px / weight 600</div>
+        <div class="type-meta-item"><strong>Mobile</strong> 26px / weight 600</div>
+        <div class="type-meta-item"><strong>Tracking</strong> -0.02em</div>
+        <div class="type-meta-item"><strong>Fonte</strong> Sora</div>
+      </div>
+      <div class="demo-h2">A nossa história</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100);">
+        <span class="tw">font-sora</span>
+        <span class="tw">text-[36px]</span>
+        <span class="tw">md:text-[26px]</span>
+        <span class="tw">font-semibold</span>
+        <span class="tw">tracking-[-0.02em]</span>
+      </div>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Elemento</strong> H3 — Sub-sections</div>
+        <div class="type-meta-item"><strong>Desktop</strong> 22px / weight 600</div>
+        <div class="type-meta-item"><strong>Mobile</strong> 18px / weight 600</div>
+        <div class="type-meta-item"><strong>Fonte</strong> Sora</div>
+      </div>
+      <div class="demo-h3">O teu açaí perfeito, sem complicações</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100);">
+        <span class="tw">font-sora</span>
+        <span class="tw">text-[22px]</span>
+        <span class="tw">md:text-[18px]</span>
+        <span class="tw">font-semibold</span>
+      </div>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Elemento</strong> Impact Phrase — Lifestyle</div>
+        <div class="type-meta-item"><strong>Tamanho</strong> 18–22px / weight 600</div>
+        <div class="type-meta-item"><strong>Cor</strong> Verde ou Roxo</div>
+        <div class="type-meta-item"><strong>Tracking</strong> +0.03em</div>
+        <div class="type-meta-item"><strong>Fonte</strong> Sora</div>
+      </div>
+      <div class="demo-impact">Sun. Energy. Açaí. Repeat.</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100);">
+        <span class="tw">font-sora</span>
+        <span class="tw">text-xl</span>
+        <span class="tw">font-semibold</span>
+        <span class="tw">uppercase</span>
+        <span class="tw">tracking-wide</span>
+        <span class="tw">text-green-700</span>
+      </div>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Elemento</strong> Body Text</div>
+        <div class="type-meta-item"><strong>Tamanho</strong> 16px / weight 400</div>
+        <div class="type-meta-item"><strong>Line-height</strong> 1.7</div>
+        <div class="type-meta-item"><strong>Fonte</strong> Inter</div>
+      </div>
+      <div class="demo-body">Inspirada na paixão pelo mar, pelo verão e por um estilo de vida saudável, a SeaBerry Açaí nasceu com o propósito de tornar o teu verão inesquecível — levando até ti o verdadeiro sabor do verão em cada colher.</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100);">
+        <span class="tw">font-inter</span>
+        <span class="tw">text-base</span>
+        <span class="tw">font-normal</span>
+        <span class="tw">leading-[1.7]</span>
+        <span class="tw">text-gray-700</span>
+      </div>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Elemento</strong> Small / Captions</div>
+        <div class="type-meta-item"><strong>Tamanho</strong> 14px / weight 400</div>
+        <div class="type-meta-item"><strong>Fonte</strong> Inter</div>
+      </div>
+      <div class="demo-small">Abre todos os dias · 10h–20h · Praia de Machico, Madeira</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100);">
+        <span class="tw">font-inter</span>
+        <span class="tw">text-sm</span>
+        <span class="tw">text-gray-500</span>
+      </div>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-meta">
+        <div class="type-meta-item"><strong>Elemento</strong> Button Text</div>
+        <div class="type-meta-item"><strong>Tamanho</strong> 15px / weight 600</div>
+        <div class="type-meta-item"><strong>Tracking</strong> +0.02em</div>
+        <div class="type-meta-item"><strong>Fonte</strong> Inter</div>
+      </div>
+      <div class="demo-btn" style="color:var(--green);">Visita-nos  →</div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--gray-100);">
+        <span class="tw">font-inter</span>
+        <span class="tw">text-[15px]</span>
+        <span class="tw">font-semibold</span>
+        <span class="tw">tracking-[0.02em]</span>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Import no HTML:</strong> <code style="background:rgba(62,44,86,0.1);padding:2px 6px;border-radius:4px;font-size:12px;">&lt;link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"&gt;</code>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- 03 ESPAÇAMENTO -->
+  <!-- ════════════════════════════════════ -->
+  <div class="section" id="espacamento">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2>Espaçamento & Layout</h2>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <h3>Espaçamento entre Secções</h3>
+      <table class="spec-table">
+        <thead>
+          <tr><th>Contexto</th><th>Valor</th><th>Tailwind</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Entre secções (desktop)</td><td><code>96px / 6rem</code></td><td><span class="tw">py-24</span></td></tr>
+          <tr><td>Entre secções (mobile)</td><td><code>64px / 4rem</code></td><td><span class="tw">py-16</span></td></tr>
+          <tr><td>Padding horizontal secção</td><td><code>24–48px</code></td><td><span class="tw">px-6</span> <span class="tw">md:px-12</span></td></tr>
+          <tr><td>Largura máxima container</td><td><code>1200px</code></td><td><span class="tw">max-w-[1200px] mx-auto</span></td></tr>
+          <tr><td>Gap entre título e conteúdo</td><td><code>32px / 2rem</code></td><td><span class="tw">mb-8</span></td></tr>
+          <tr><td>Gap entre parágrafos</td><td><code>16px / 1rem</code></td><td><span class="tw">mb-4</span></td></tr>
+          <tr><td>Gap entre cards/fotos</td><td><code>16–24px</code></td><td><span class="tw">gap-4</span> <span class="tw">md:gap-6</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Grid System</h3>
+      <table class="spec-table">
+        <thead>
+          <tr><th>Breakpoint</th><th>Colunas</th><th>Tailwind</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mobile (&lt; 640px)</td><td>1 coluna</td><td><span class="tw">grid-cols-1</span></td></tr>
+          <tr><td>Tablet (640–1024px)</td><td>2 colunas</td><td><span class="tw">sm:grid-cols-2</span></td></tr>
+          <tr><td>Desktop (&gt; 1024px)</td><td>3–4 colunas</td><td><span class="tw">lg:grid-cols-3</span></td></tr>
+          <tr><td>Galeria fotos</td><td>2 → 3 → 4 colunas</td><td><span class="tw">grid-cols-2 md:grid-cols-3 lg:grid-cols-4</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- 04 BOTÕES & CTAs -->
+  <!-- ════════════════════════════════════ -->
+  <div class="section" id="botoes">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2>Botões & CTAs</h2>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <h3>Variantes</h3>
+      <div class="btn-demo-row">
+        <a class="btn btn-primary" href="#">Visita-nos →</a>
+        <a class="btn btn-secondary" href="#">Ver Galeria</a>
+        <a class="btn btn-dark" href="#">Sobre Nós</a>
+        <a class="btn btn-ghost" href="#">Saber Mais</a>
+      </div>
+      <div class="btn-demo-row">
+        <a class="btn btn-primary btn-sm" href="#">CTA Pequeno</a>
+        <a class="btn btn-primary" href="#">CTA Médio</a>
+        <a class="btn btn-primary btn-lg" href="#">CTA Grande</a>
+      </div>
+    </div>
+
+    <div class="card-grid" style="margin-bottom:16px;">
+      <div class="card">
+        <div style="font-weight:600;font-size:13px;color:var(--green);margin-bottom:10px;">Botão Primário (CTA principal)</div>
+        <table class="spec-table">
+          <tr><td>Cor</td><td><code>#497536</code> (Verde)</td></tr>
+          <tr><td>Texto</td><td>Branco, 15px, Semi-Bold</td></tr>
+          <tr><td>Padding</td><td><code>14px 32px</code></td></tr>
+          <tr><td>Border-radius</td><td>Pill (999px)</td></tr>
+          <tr><td>Hover bg</td><td><code>#6aaa52</code></td></tr>
+          <tr><td>Hover sombra</td><td><code>0 8px 24px rgba(73,117,54,0.32)</code></td></tr>
+          <tr><td>Hover transform</td><td><code>translateY(-2px)</code></td></tr>
+        </table>
+        <div style="margin-top:10px;font-size:12px;color:var(--gray-500);">Tailwind:</div>
+        <div>
+          <span class="tw">bg-[#497536]</span>
+          <span class="tw">text-white</span>
+          <span class="tw">px-8</span>
+          <span class="tw">py-3.5</span>
+          <span class="tw">rounded-full</span>
+          <span class="tw">font-semibold</span>
+          <span class="tw">hover:-translate-y-0.5</span>
+          <span class="tw">transition-all</span>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-weight:600;font-size:13px;color:var(--purple-dark);margin-bottom:10px;">Botão Secundário (Outline)</div>
+        <table class="spec-table">
+          <tr><td>Fundo</td><td>Transparente</td></tr>
+          <tr><td>Border</td><td><code>2px solid #497536</code></td></tr>
+          <tr><td>Texto</td><td><code>#497536</code>, 15px</td></tr>
+          <tr><td>Padding</td><td><code>12px 28px</code></td></tr>
+          <tr><td>Hover bg</td><td><code>#F0F5EE</code> (verde muito claro)</td></tr>
+        </table>
+        <div style="margin-top:10px;font-size:12px;color:var(--gray-500);">Tailwind:</div>
+        <div>
+          <span class="tw">border-2</span>
+          <span class="tw">border-[#497536]</span>
+          <span class="tw">text-[#497536]</span>
+          <span class="tw">rounded-full</span>
+          <span class="tw">hover:bg-green-50</span>
+          <span class="tw">transition-all</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-block">
+      <strong>Regra de hierarquia:</strong> Máximo 1 CTA primário por ecrã (viewport). Todos os outros devem ser secundários ou ghost. Nunca dois botões verdes lado a lado.
+    </div>
+    <div class="rule-block green-rule">
+      <strong>Texto dos botões:</strong> Curto, direto, com ação clara. Exemplos ideais: "Visita-nos", "Ver Galeria", "Como Chegar", "Seguir no Instagram". Evitar: "Clica aqui", "Saber mais sobre nós".
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- 05 ANIMAÇÕES -->
+  <!-- ════════════════════════════════════ -->
+  <div class="section" id="animacoes">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <h2>Animações & Motion</h2>
+    </div>
+
+    <div class="anim-grid">
+
+      <div class="anim-card">
+        <div class="anim-card-icon" style="background:#EAE3F2;">↓</div>
+        <div class="anim-card-title">Fade-in ao Scroll</div>
+        <div class="anim-card-desc">Secções aparecem suavemente ao entrar na viewport. Usar IntersectionObserver.</div>
+        <div class="anim-card-code">opacity: 0 → 1<br/>translateY(24px) → 0<br/>duration: 0.6s ease-out<br/>delay: 0.1s por elemento</div>
+      </div>
+
+      <div class="anim-card">
+        <div class="anim-card-icon" style="background:#E8F4E3;">⬡</div>
+        <div class="anim-card-title">Parallax Ligeiro (Hero)</div>
+        <div class="anim-card-desc">Imagem de fundo move-se a 0.4x a velocidade do scroll. Subtil, nunca exagerado.</div>
+        <div class="anim-card-code">background-attachment: fixed<br/>ou JS: translateY(scroll * 0.4)<br/>Apenas na secção Hero</div>
+      </div>
+
+      <div class="anim-card">
+        <div class="anim-card-icon" style="background:#EAE3F2;">↗</div>
+        <div class="anim-card-title">Hover em Botões</div>
+        <div class="anim-card-desc">Lift subtil com sombra. Nunca escalar mais de 1.03 — parece amador.</div>
+        <div class="anim-card-code">transform: translateY(-2px)<br/>box-shadow: 0 8px 24px ...<br/>transition: all 0.18s ease<br/>active: scale(0.98)</div>
+      </div>
+
+      <div class="anim-card">
+        <div class="anim-card-icon" style="background:#E8F4E3;">⬡</div>
+        <div class="anim-card-title">Imagens com Zoom Hover</div>
+        <div class="anim-card-desc">Fotos da galeria com ligeiro zoom ao hover. Container com overflow hidden.</div>
+        <div class="anim-card-code">img { transition: transform 0.5s ease; }<br/>img:hover { transform: scale(1.04); }<br/>.wrap { overflow: hidden; }</div>
+      </div>
+
+      <div class="anim-card">
+        <div class="anim-card-icon" style="background:#EAE3F2;">⟳</div>
+        <div class="anim-card-title">Stagger de Elementos</div>
+        <div class="anim-card-desc">Vários elementos entram um a um. Máximo 4 elementos no stagger.</div>
+        <div class="anim-card-code">delay: 0s, 0.1s, 0.2s, 0.3s<br/>Nunca mais de 0.4s delay total<br/>Usar animation-delay: Ns</div>
+      </div>
+
+      <div class="anim-card">
+        <div class="anim-card-icon" style="background:#FDE8E8;" style="font-size:14px;">✗</div>
+        <div class="anim-card-title">O que EVITAR</div>
+        <div class="anim-card-desc">Qualquer animação constante/loop, bounce, rotações, parallax agressivo, pulse infinito, loading spinners decorativos.</div>
+        <div class="anim-card-code" style="background:#FDE8E8;color:#8B2020;">animation-iteration-count: infinite<br/>rotate / bounce / flip<br/>hover scale > 1.05</div>
+      </div>
+
+    </div>
+
+    <div class="note" style="margin-top:20px;">
+      <strong>Tailwind Animation Utility:</strong> Adicionar ao tailwind.config.js — <code style="background:rgba(62,44,86,0.1);padding:2px 5px;border-radius:3px;font-size:11px;">fadeInUp: 'fadeInUp 0.6s ease-out forwards'</code> e keyframe correspondente. Ou usar classe CSS custom com <code style="background:rgba(62,44,86,0.1);padding:2px 5px;border-radius:3px;font-size:11px;">@keyframes fadeInUp</code>.
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- 06 SECÇÕES -->
+  <!-- ════════════════════════════════════ -->
+  <div class="section" id="seccoes">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <h2>Estrutura das Secções</h2>
+    </div>
+
+    <!-- HERO -->
+    <div class="wireframe">
+      <div class="wf-header">
+        <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+        <div class="wf-label">Secção 1 — Hero</div>
+      </div>
+      <div class="wf-body">
+        <div class="wf-tag wf-tag-hero">Hero · Entrada</div>
+        <ul class="wf-spec-list">
+          <li>Imagem de fundo full-screen (100vh) com overlay gradiente escuro em baixo<span class="detail">overlay: rgba(0,0,0,0.25–0.4)</span></li>
+          <li>Navbar transparente no topo com logo + link âncoras<span class="detail">height: 64px · sticky</span></li>
+          <li>Título H1: "Make this summer yours." centrado<span class="detail">Sora 56px · branco · shadow suave</span></li>
+          <li>Sub-frase: pequena, 16px, branco 80%<span class="detail">Inter · max-width: 420px</span></li>
+          <li>Botão CTA: "Visita-nos" — Verde, centrado<span class="detail">btn-primary btn-lg</span></li>
+          <li>Scroll indicator (seta animada em baixo)<span class="detail">bounce suave · 3s · infinite OK aqui</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BRAND -->
+    <div class="wireframe">
+      <div class="wf-header">
+        <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+        <div class="wf-label">Secção 2 — Sobre a Marca</div>
+      </div>
+      <div class="wf-body">
+        <div class="wf-tag wf-tag-brand">Brand · Contexto rápido</div>
+        <ul class="wf-spec-list">
+          <li>Fundo branco · Layout 2 colunas (desktop) ou 1 coluna (mobile)<span class="detail">grid-cols-1 md:grid-cols-2</span></li>
+          <li>Coluna esquerda: texto (máx 4 linhas) + label "A Nossa Missão"<span class="detail">Inter 16px · line-height 1.7</span></li>
+          <li>Coluna direita: imagem produto/ambiente com border-radius 20px<span class="detail">aspect-ratio: 4/5 ou 1/1</span></li>
+          <li>Pequena tag decorativa: "Machico · Madeira · Desde 2024"<span class="detail">Verde · uppercase · tracking-wide</span></li>
+          <li>Fade-in ao scroll (esquerda e direita separados com delay 0.15s)<span class="detail">IntersectionObserver</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LIFESTYLE -->
+    <div class="wireframe">
+      <div class="wf-header">
+        <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+        <div class="wf-label">Secção 3 — Experiência / Lifestyle</div>
+      </div>
+      <div class="wf-body">
+        <div class="wf-tag wf-tag-life">Lifestyle · Emoção</div>
+        <ul class="wf-spec-list">
+          <li>Fundo off-white (#F8F7F5) com secção dividida em 2 partes<span class="detail">Visual e textual</span></li>
+          <li>Parte visual: mosaico de 3–4 fotos (tamanhos diferentes, assimétricas)<span class="detail">grid-cols-2 · gap-3 · alturas variadas</span></li>
+          <li>Parte textual: frases de impacto em Sora + textos sensoriais curtos<span class="detail">"Sun. Energy. Açaí. Repeat."</span></li>
+          <li>Frases em verde (#497536) uppercase + frases normais roxo escuro<span class="detail">Alternância visual</span></li>
+          <li>CTA secundário: "Ver Galeria" (outline verde)<span class="detail">btn-secondary</span></li>
+          <li>Close-up de produto de alta qualidade (pelo menos 1 foto dominante)<span class="detail">min-height: 400px</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="wireframe">
+      <div class="wf-header">
+        <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+        <div class="wf-label">Secção 4 — Galeria (scroll horizontal)</div>
+      </div>
+      <div class="wf-body">
+        <div class="wf-tag wf-tag-gallery">Galeria · Scroll Right</div>
+        <ul class="wf-spec-list">
+          <li>Faixa horizontal com scroll — apenas overflow-x: auto<span class="detail">scroll-snap-type: x mandatory</span></li>
+          <li>Fotos em aspect-ratio 4/5 (portrait) ou 1/1 (square)<span class="detail">width: 280px mobile · 340px desktop</span></li>
+          <li>Espaço entre fotos: 12–16px<span class="detail">gap: 3 ou 4 · flex · nowrap</span></li>
+          <li>Zoom suave ao hover em cada foto<span class="detail">scale(1.04) · overflow hidden</span></li>
+          <li>Indicador visual de scroll (seta → ou "desliza")<span class="detail">Inter · 12px · gray-500</span></li>
+          <li>Esconder scrollbar mas manter scroll (CSS)<span class="detail">scrollbar-width: none</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="wireframe">
+      <div class="wf-header">
+        <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+        <div class="wf-label">Secção 5 — Reviews</div>
+      </div>
+      <div class="wf-body">
+        <div class="wf-tag wf-tag-reviews">Reviews · Confiança</div>
+        <ul class="wf-spec-list">
+          <li>Fundo branco · 3–5 cards de review em grid<span class="detail">grid-cols-1 sm:grid-cols-3</span></li>
+          <li>Cada card: estrelas (★★★★★) · texto · nome + país/emoji bandeira<span class="detail">Card com border-radius 16px · shadow leve</span></li>
+          <li>Citação em Inter 15px itálico · cor gray-700<span class="detail">max 3 linhas por review</span></li>
+          <li>Nome em bold · País em gray-500 · Bandeira emoji (apenas bandeira)<span class="detail">"Ana M. 🇵🇹" ou "James K. 🇬🇧"</span></li>
+          <li>Card de destaque (review central) ligeiramente maior<span class="detail">scale 1.02 · border roxa subtil</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LOCALIZAÇÃO -->
+    <div class="wireframe">
+      <div class="wf-header">
+        <div class="wf-dot"></div><div class="wf-dot"></div><div class="wf-dot"></div>
+        <div class="wf-label">Secção 6 — Localização & Redes</div>
+      </div>
+      <div class="wf-body">
+        <div class="wf-tag wf-tag-loc">Localização · Conversão</div>
+        <ul class="wf-spec-list">
+          <li>Fundo roxo escuro (#3E2C56) para criar contraste e fechar o site<span class="detail">Último bloco antes do footer</span></li>
+          <li>Título H2 em branco: "Encontra-nos" ou "Vem visitar-nos"<span class="detail">Sora · branco</span></li>
+          <li>Mapa embed Google Maps (iframe) ou imagem estática com link<span class="detail">border-radius: 16px</span></li>
+          <li>Morada + horário em Inter · branco 75%<span class="detail">14–15px · layout em 2 colunas</span></li>
+          <li>Botões: "Google Maps" (branco), Instagram, TikTok, Facebook<span class="detail">Ícones SVG · botões outline brancos</span></li>
+          <li>Ícones redes sociais: apenas SVG limpo, sem texto desnecessário<span class="detail">32×32px · cor branca · hover: verde</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- 07 MOBILE-FIRST -->
+  <!-- ════════════════════════════════════ -->
+  <div class="section" id="mobile">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <h2>Dicas Mobile-First</h2>
+    </div>
+
+    <div class="tip-grid">
+      <div class="tip-card">
+        <div class="tip-icon purple">☰</div>
+        <div>
+          <div class="tip-card-title">Navbar Mobile</div>
+          <div class="tip-card-desc">Hamburger menu em mobile. Links âncora (#hero, #sobre, etc.). Nunca abrir nova página. Fixed top com blur de fundo.</div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon green">✋</div>
+        <div>
+          <div class="tip-card-title">Targets táteis</div>
+          <div class="tip-card-desc">Todos os botões e links com min-height: 44px e min-width: 44px. Regra Apple/Google HIG para acessibilidade tátil.</div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon purple">↕</div>
+        <div>
+          <div class="tip-card-title">Hero Mobile</div>
+          <div class="tip-card-desc">Usar min-height: 100svh (small viewport height) para evitar cortes do browser bar. Imagem com object-position: center.</div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon green">⟶</div>
+        <div>
+          <div class="tip-card-title">Galeria Horizontal</div>
+          <div class="tip-card-desc">Scroll snapping nativo no CSS. Esconder scrollbar com CSS. Hint visual (parte da 2ª foto visível).</div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon purple">A</div>
+        <div>
+          <div class="tip-card-title">Tamanho de Texto</div>
+          <div class="tip-card-desc">Mínimo 16px em body (evita zoom automático iOS). H1 mínimo 32px em mobile. Nunca abaixo de 14px para conteúdo.</div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon green">⚡</div>
+        <div>
+          <div class="tip-card-title">Performance</div>
+          <div class="tip-card-desc">Imagens em WebP. Lazy loading nativo (loading="lazy"). Hero image prioritária (fetchpriority="high"). Max 3MB total.</div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon purple">☁</div>
+        <div>
+          <div class="tip-card-title">Imagens</div>
+          <div class="tip-card-desc">Usar srcset para diferentes resoluções. Sempre definir width e height para evitar layout shift (CLS). Alt text descritivo.</div>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon green">↗</div>
+        <div>
+          <div class="tip-card-title">Links Externos</div>
+          <div class="tip-card-desc">Google Maps e redes sociais abrem em nova aba (target="_blank" rel="noopener"). Botão "Como Chegar" com deep link direto.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- 08 TAILWIND CONFIG -->
+  <!-- ════════════════════════════════════ -->
+  <div class="section" id="tailwind">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <h2>Tailwind CSS — Configuração</h2>
+    </div>
+
+    <div class="card" style="margin-bottom:16px;">
+      <h3 style="margin-bottom:16px;">tailwind.config.js</h3>
+      <pre style="background:#1A1815;color:#E8E4DC;font-family:'Courier New',monospace;font-size:13px;padding:24px;border-radius:12px;overflow-x:auto;line-height:1.7;"><span style="color:#94358F;">module.exports</span> = {
+  content: [<span style="color:#6aaa52;">'./src/**/*.{html,js}'</span>],
+  theme: {
+    extend: {
+      <span style="color:#94358F;">colors</span>: {
+        <span style="color:#6aaa52;">'purple-dark'</span>: <span style="color:#6aaa52;">'#3E2C56'</span>,
+        <span style="color:#6aaa52;">'purple-mid'</span>:  <span style="color:#6aaa52;">'#94358F'</span>,
+        <span style="color:#6aaa52;">'brand-green'</span>: <span style="color:#6aaa52;">'#497536'</span>,
+        <span style="color:#6aaa52;">'green-hover'</span>: <span style="color:#6aaa52;">'#6aaa52'</span>,
+        <span style="color:#6aaa52;">'off-white'</span>:   <span style="color:#6aaa52;">'#F8F7F5'</span>,
+        <span style="color:#6aaa52;">'gray-100'</span>:    <span style="color:#6aaa52;">'#F0EEE9'</span>,
+        <span style="color:#6aaa52;">'gray-500'</span>:    <span style="color:#6aaa52;">'#8A8680'</span>,
+        <span style="color:#6aaa52;">'gray-700'</span>:    <span style="color:#6aaa52;">'#3D3A36'</span>,
+      },
+      <span style="color:#94358F;">fontFamily</span>: {
+        <span style="color:#6aaa52;">'sora'</span>:  [<span style="color:#6aaa52;">'Sora'</span>, <span style="color:#6aaa52;">'sans-serif'</span>],
+        <span style="color:#6aaa52;">'inter'</span>: [<span style="color:#6aaa52;">'Inter'</span>, <span style="color:#6aaa52;">'sans-serif'</span>],
+      },
+      <span style="color:#94358F;">borderRadius</span>: {
+        <span style="color:#6aaa52;">'xl'</span>:   <span style="color:#6aaa52;">'20px'</span>,
+        <span style="color:#6aaa52;">'2xl'</span>:  <span style="color:#6aaa52;">'32px'</span>,
+        <span style="color:#6aaa52;">'pill'</span>: <span style="color:#6aaa52;">'999px'</span>,
+      },
+      <span style="color:#94358F;">animation</span>: {
+        <span style="color:#6aaa52;">'fade-up'</span>:     <span style="color:#6aaa52;">'fadeUp 0.6s ease-out forwards'</span>,
+        <span style="color:#6aaa52;">'fade-up-d1'</span>:  <span style="color:#6aaa52;">'fadeUp 0.6s 0.1s ease-out forwards'</span>,
+        <span style="color:#6aaa52;">'fade-up-d2'</span>:  <span style="color:#6aaa52;">'fadeUp 0.6s 0.2s ease-out forwards'</span>,
+        <span style="color:#6aaa52;">'fade-up-d3'</span>:  <span style="color:#6aaa52;">'fadeUp 0.6s 0.3s ease-out forwards'</span>,
+      },
+      <span style="color:#94358F;">keyframes</span>: {
+        <span style="color:#6aaa52;">fadeUp</span>: {
+          <span style="color:#6aaa52;">'0%'</span>:   { opacity: <span style="color:#6aaa52;">'0'</span>, transform: <span style="color:#6aaa52;">'translateY(24px)'</span> },
+          <span style="color:#6aaa52;">'100%'</span>: { opacity: <span style="color:#6aaa52;">'1'</span>, transform: <span style="color:#6aaa52;">'translateY(0)'</span> },
+        },
+      },
+    },
+  },
+  plugins: [],
+};</pre>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-bottom:16px;">Classes Tailwind — Referência Rápida</h3>
+      <table class="spec-table">
+        <thead>
+          <tr><th>Elemento</th><th>Classes Tailwind</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hero Title (desktop)</td>
+            <td><span class="tw">font-sora text-[56px] font-bold tracking-[-0.03em] leading-[1.05] text-white</span></td>
+          </tr>
+          <tr>
+            <td>Section Title (H2)</td>
+            <td><span class="tw">font-sora text-4xl md:text-[36px] font-semibold text-purple-dark</span></td>
+          </tr>
+          <tr>
+            <td>Impact Phrase</td>
+            <td><span class="tw">font-sora text-xl font-semibold uppercase tracking-wider text-brand-green</span></td>
+          </tr>
+          <tr>
+            <td>Body text</td>
+            <td><span class="tw">font-inter text-base leading-[1.7] text-gray-700</span></td>
+          </tr>
+          <tr>
+            <td>Botão Primário</td>
+            <td><span class="tw">bg-brand-green text-white px-8 py-3.5 rounded-pill font-semibold hover:bg-green-hover hover:-translate-y-0.5 transition-all duration-200</span></td>
+          </tr>
+          <tr>
+            <td>Botão Outline</td>
+            <td><span class="tw">border-2 border-brand-green text-brand-green px-7 py-3 rounded-pill hover:bg-green-50 transition-all duration-200</span></td>
+          </tr>
+          <tr>
+            <td>Section padding</td>
+            <td><span class="tw">py-24 px-6 md:px-12 (desktop) · py-16 px-5 (mobile)</span></td>
+          </tr>
+          <tr>
+            <td>Container</td>
+            <td><span class="tw">max-w-[1200px] mx-auto w-full</span></td>
+          </tr>
+          <tr>
+            <td>Card</td>
+            <td><span class="tw">bg-white rounded-xl border border-gray-100 p-6 md:p-7</span></td>
+          </tr>
+          <tr>
+            <td>Galeria scroll</td>
+            <td><span class="tw">flex gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-hide</span></td>
+          </tr>
+          <tr>
+            <td>Foto galeria</td>
+            <td><span class="tw">w-[280px] shrink-0 snap-start rounded-xl overflow-hidden aspect-[4/5]</span></td>
+          </tr>
+          <tr>
+            <td>Hover zoom foto</td>
+            <td><span class="tw">transition-transform duration-500 hover:scale-[1.04]</span></td>
+          </tr>
+          <tr>
+            <td>Secção Localização</td>
+            <td><span class="tw">bg-purple-dark text-white py-24 px-6 rounded-t-[32px]</span></td>
+          </tr>
+          <tr>
+            <td>Fade-in ao scroll</td>
+            <td><span class="tw">opacity-0 animate-fade-up (add class via JS on intersect)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note" style="margin-top:16px;">
+      <strong>Scroll animation JS snippet:</strong><br/>
+      <code style="background:rgba(62,44,86,0.1);padding:4px 8px;border-radius:4px;font-size:12px;display:block;margin-top:8px;line-height:1.8;">const observer = new IntersectionObserver((entries) => {<br/>&nbsp;&nbsp;entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('animate-fade-up') });<br/>}, { threshold: 0.15 });<br/>document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));</code>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<div class="footer">
+  <strong>SeaBerry Açaí — Design Manual v1.0</strong><br/>
+  Machico · Madeira · Para uso interno de desenvolvimento do site
+</div>
+
+</body>
+</html>
