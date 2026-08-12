@@ -1,0 +1,15 @@
+{
+  "name": "sea-berry-acai-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@netlify/blobs": "10.7.12"
+  }
+}
