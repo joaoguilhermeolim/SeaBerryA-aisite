@@ -201,6 +201,11 @@ test("há apenas a rota pública sob /recrutamento e duas regras de rate-limit",
   }
   assert.match(frontend, /\/recrutamento\/api\/applications/u);
   assert.match(adminFunction, /"\/recrutamento\/admin"[\s\S]*"\/recrutamento\/api\/admin\/\*"/u);
+  assert.doesNotMatch(
+    netlify,
+    /to\s*=\s*["'']\/\.netlify\/functions\/recruitment-/u,
+    "custom function paths must not be rewritten to their disabled default URLs",
+  );
   assert.equal((publicFunction.match(/rateLimit:/gu) || []).length, 1);
   assert.equal((adminFunction.match(/rateLimit:/gu) || []).length, 1);
 });

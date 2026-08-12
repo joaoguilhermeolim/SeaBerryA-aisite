@@ -7,27 +7,6 @@
   node_bundler = "esbuild"
 
 # -------------------------------------------------------------
-#  Recruitment routes (must precede the language redirect)
-# -------------------------------------------------------------
-[[redirects]]
-  from   = "/recrutamento/api/applications"
-  to     = "/.netlify/functions/recruitment-applications"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "/recrutamento/api/admin/*"
-  to     = "/.netlify/functions/recruitment-admin/:splat"
-  status = 200
-  force  = true
-
-[[redirects]]
-  from   = "/recrutamento/admin"
-  to     = "/.netlify/functions/recruitment-admin"
-  status = 200
-  force  = true
-
-# -------------------------------------------------------------
 #  Language-based automatic routing
 #  English browsers → /en/   |   all others → / (PT, default)
 # -------------------------------------------------------------
